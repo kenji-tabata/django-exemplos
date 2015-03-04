@@ -12,8 +12,8 @@ como formulários, criar arquivos pdf, adicionar imagens e entre outros.
 Índice
 ---
 
-01. [Criando uma página Hello World](dj_01_hello_world)
-02. [Criando links simples](dj_02_criando_links)
+01. [Hello World](d01_hello_world)
+02. [Criando links](d2_links)
 
 
 Configurações básicas utilizadas
