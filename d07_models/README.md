@@ -3,6 +3,8 @@
 Neste exemplo é mostrado como criamos uma model para armazenar os registros obtidos ao enviar um formulário com o método 
 POST.
 
+No arquivo `settings.py` é adicionado o model do projeto no `INSTALLED_APPS` para criar as tabelas do arquivo `models.py`.
+
 Para criar a tabela do Model digite no terminal os seguintes comandos:
 
     python manage.py makemigrations nome-da-model
