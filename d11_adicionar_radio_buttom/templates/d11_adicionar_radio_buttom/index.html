@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>11. Radio Buttom</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Formulário com Radio Buttom</h1>
+        <p></p>
+        <fieldset>
+            <legend>Formulário Simples</legend>
+            <form action="{% url 'd11_adicionar_radio_buttom.views.enviar' %}" method="POST">
+                {% csrf_token %}
+                <label for='label'>Label: </label><br>
+                <input type='text' id='label' name='label' placeholder="Descrição do campo"/><br>
+                <label for='label'>Name: </label><br>
+                <input type='text' id='name' name='name' placeholder="Nome do campo"/><br>
+                <input type="submit" id='enviar' name='enviar' value='Enviar'><br>
+            </form>
+        </fieldset>
+        
+        {% if listar_radios %}
+            {% for radio in listar_radios %}
+                <input type='radio' name='{{radio.name}}' id='{{forloop.counter}}' value='{{radio.label}}'>
+                <label for='{{forloop.counter}}'>{{radio.label}}</label><br>
+            {% endfor %}
+        {% endif %}
+        
+    </body>
+</html>
