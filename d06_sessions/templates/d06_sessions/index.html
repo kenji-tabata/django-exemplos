@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>06. Sessions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Utilizando Sessions</h1>
+        
+        <p>Adicione um nome na Session com método GET</p>
+        <form method="GET" action="/">
+            Nome: <input type="text" name="nome" placeholder="Nome"/>
+            <input type="submit" value="Enviar"/>
+        </form>
+        
+        <p>Acionar um nome na Session com método POST</p>
+        <form method="POST" action="/">
+            {% csrf_token %}
+            Nome: <input type="text" name="sobrenome" placeholder="Sobrenome"/>
+            <input type="submit" value="Enviar"/>
+        </form>
+        
+        <p>Mostrar o nome armazenado na Session</p>
+        <form method="GET" action="/getNome">
+            <input type="submit" value="Mostrar Nome"/>
+        </form>
+        {% if nome %}
+            <b>Nome: </b> {{ nome }} {{ sobrenome }}
+        {% endif %}
+    </body>
+</html>
