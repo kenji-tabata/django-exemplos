@@ -1,6 +1,7 @@
 09. Adicionar Checkbox
 
-Neste exemplo é mostrado como adicionar um checkbox no próprio template.
+Neste exemplo é mostrado como adicionar um checkbox no próprio template. Exemplo pratico apenas para demonstrar como 
+adicionar input do radio buttom na página HTML.
 
 No arquivo `settings.py` é adicionado o model do projeto no `INSTALLED_APPS` para criar as tabelas do arquivo `models.py`.
 
