@@ -1,0 +1,14 @@
+<div>
+    <h1>Lista</h1>
+    {% if listar %}
+        {% for list in listar %}
+        <div style='border-bottom: 1px solid #000'>
+            <p>Nome: {{list.nome}}</p>
+            <p>CPF: {{list.cpf}}</p>
+            <p>Sexo: {{list.sexo}}</p>
+            <p>E-mail: {{list.email}}</p>
+            <p>Telefone: ({{list.ddd}}) {{list.telefone}}</p><br/>
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>
