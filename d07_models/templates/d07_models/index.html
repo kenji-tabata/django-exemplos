@@ -9,7 +9,8 @@
         <h1>Model e Formulário</h1>
         <p>Enviando dados do formulário para o Banco de dados através do Model.</p>
         <p>Formulário gerado manualmente em HTML com input do tipo 'TEXT' e 'TEXTAREA'.</p>
-        <fieldset>
+        
+        <fieldset style="float:left; width:400px">
             <legend>Formulário Simples</legend>
             {% if sucess %}
                 <strong>{{ sucess }}</strong>
@@ -24,12 +25,13 @@
             </form>
         </fieldset>
         
-        {% if listar_posts %}
-            {% for post in listar_posts %}
-                <b>Título: </b> {{ post.titulo }}<br>
-                <b>Data: </b> {{post.data}}<br><br>
-            {% endfor %}
-        {% endif %}
-        
+        <div style="float:left; width:400px">
+            {% if listar_posts %}
+                {% for post in listar_posts %}
+                    <b>Título: </b> {{ post.titulo }}<br>
+                    <b>Data: </b> {{post.data}}<br><br>
+                {% endfor %}
+            {% endif %}
+        </div>
     </body>
 </html>
