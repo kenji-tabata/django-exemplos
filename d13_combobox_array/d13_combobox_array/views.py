@@ -17,4 +17,4 @@ def index(request):
         
         html += t.render(con)
     
-    return render(request, 'd13_checkbox_multi_array/index.html', {'html': html})
+    return render(request, 'd13_combobox_array/index.html', {'html': html})

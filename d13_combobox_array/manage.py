@@ -3,7 +3,7 @@ import os
 import sys
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "d13_checkbox_multi_array.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "d13_combobox_array.settings")
 
     from django.core.management import execute_from_command_line
 

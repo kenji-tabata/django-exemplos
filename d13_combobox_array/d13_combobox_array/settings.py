@@ -1,5 +1,5 @@
 """
-Django settings for d13_checkbox_multi_array project.
+Django settings for d13_combobox_array project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -48,9 +48,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'd13_checkbox_multi_array.urls'
+ROOT_URLCONF = 'd13_combobox_array.urls'
 
-WSGI_APPLICATION = 'd13_checkbox_multi_array.wsgi.application'
+WSGI_APPLICATION = 'd13_combobox_array.wsgi.application'
 
 
 # Database
