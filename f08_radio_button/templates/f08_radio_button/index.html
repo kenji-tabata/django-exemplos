@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>11. Radio Buttom</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Formulário com Radio Buttom</h1>
+        <p></p>
+        <fieldset style="width:400px;">
+            <legend>Sexo</legend>
+            <form action="{% url 'f08_radio_button.views.enviar' %}" method="POST">
+                {% csrf_token %}
+                <label for='masc'>Masculino</label>
+                <input type='radio' name='sexo' id='masc' value='masculino'><br>
+                <label for='fem'>Feminino</label>
+                <input type='radio' name='sexo' id='fem' value='feminino'><br>
+                <input type="submit" id='enviar' name='enviar' value='Enviar'><br>
+            </form>
+        </fieldset>
+        
+        {% if listar_radios %}
+            {% for radio in listar_radios %}
+                {{radio.sexo}}<br/>
+            {% endfor %}
+        {% endif %}
+        
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>06. Checkbox Multi</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="{% url 'f06_checkbox_multi.views.enviar' %}" method='POST'>
+            {% csrf_token %}
+            <label for='nome'>Nome: </label>
+            <input type='text' id='nome' name='nome'/><br>
+            
+            {% for key, value in checkboxes.items %}
+                <input type="checkbox" id='check{{forloop.counter}}' name="check" value='{{forloop.counter}}'>
+                <label for="check{{forloop.counter}}">{{ value }}</label><br>
+            {% endfor %}
+            
+            <input type="submit" id="enviar" name="enviar" value="Enviar">
+        </form>
+        
+        <br><br>
+
+        {% if lista %}
+            {% for check in lista %}
+                <b>Nome: </b> {{ check.nome }}<br>
+                <b>Alternativas: </b> {{ check.alternativa }}<br><br>
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
