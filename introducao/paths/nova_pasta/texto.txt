@@ -1,0 +1,1 @@
+Frase do arquivo "texto.txt" que está na pasta "nova_pasta" no diretório raiz do projeto.
