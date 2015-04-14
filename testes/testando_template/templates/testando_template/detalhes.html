@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>11. Testando View no Shell</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <ul>
+            <li><a href="{% url 'views.index' %}">Home</a></li>
+            <li><a href="{% url 'views.adicionar' %}">Adicionar</a></li>
+        </ul>
+        
+        <h1>Detalhes do Cliente</h1>
+        
+        {% if contato %}
+            <p>Nome: {{ contato.nome }}</p>
+            <p>E-mail: {{ contato.email }}</p>
+            <p>Data: {{ contato.data }}</p>
+            <p>Mensagem: {{ contato.mensagem|linebreaks }}</p>
+        {% else %}
+            <p>Registro não encontrado!</p>
+        {% endif %}
+    </body>
+</html>
