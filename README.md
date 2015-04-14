@@ -8,58 +8,47 @@ O Objetivo é mais para utilizar como uma fonte de informações sobre o que faz
 como formulários, criar arquivos pdf, adicionar imagens e entre outros.
 
 
-
 Índice
 ---
 
-01. [Hello World](d01_hello_world)
-02. [Criando links](d2_links)
+01. [Introdução](introducao)
+02. [Templates](templates)
+03. [Banco de dados](banco_de_dados)
+04. [Configurando Servidor Apache](configurando_apache)
+05. [Formulário: Input Types & Django Forms](input_types)
+06. [Manipulando o formulário](manipulando_forms)
+07. [Testes](testes)
+08. [Customizando o Django](customizando)
+09. [Módulos Externos](modulos_externos)
+
 
 
 Configurações básicas utilizadas
 ---
 
-Abaixo estão as configurações utilizadas que facilitam no desenvolvimento do site, algumas delas já foram aplicadas neste 
-projeto e estão aqui mais como informação sobre como fazer. Conforme o tempo vou adicionando algumas configurações extras
-caso for necessário para alguma aplicação.
+Abaixo estão as configurações utilizadas no desenvolvimento dos exemplos, algumas delas já foram aplicadas neste projeto 
+e estão aqui mais como informação sobre como fazer.
 
-
-###Pasta padrão para os templates HTML
+### Pasta padrão para os templates HTML
 
     1. Crie uma nova pasta na raiz do projeto com o nome `template`;
     2. Adicione no arquivo `settings.py` a seguinte configuração: `TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]`;
     3. Todo template criado deve ser colocado em uma pasta com o mesmo nome da aplicação.
 
 
-Neste projeto iremos utilizar apenas o Banco de Dados SQLite3, que é o Banco de Dados padrão do Django, caso queria alterar
-o Banco de Dados utilizado siga o passo-a-passo abaixo para alterar o Banco de Dados.
 
+### Adicionando o model da aplicação e migrando seus dados para uma database do MySQL
 
-###Configuração do Banco de Dados MySQL
+No arquivo `settings.py` é adicione o nome do projeto (ou aplicação) no `INSTALLED_APPS` para instalar o `model`.
 
-    1. Para trocar o Banco de Dados utilizado no projeto abre o arquivo `settings.py`;
-    2. Procure o seguinte trecho de código:
+    INSTALLED_APPS = (
+        'django.contrib.admin',
+        ...
+        'nome-do-projeto'
+    )
 
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'mydatabase',
-        }
+Para criar a tabela do projeto (ou aplicação) digite no terminal os seguintes comandos:
 
-    3. E substitua pelo código abaixo:
+    python manage.py makemigrations nome-da-projeto
+    python manage.py migrate
 
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'nome-da-database',
-            'USER': 'root',
-            'PASSWORD': 'senha-do-root',
-            'HOST': '127.0.0.1',
-        }
-
-    4. Instale o módulo PyMysql com o comando `pip install pymysql`;
-
-    5. Abre o arquivo `__init__.py` e adicione o trecho de código abaixo para ativar o módulo PyMySQL
-
-        import pymysql
-        pymysql.install_as_MySQLdb()
-
-    6. Por último utilize o comando `python manage.py syncdb` para adicionar as tabelas do Django na database escolhida.
