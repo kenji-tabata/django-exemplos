@@ -11,46 +11,90 @@ nesta mesma pasta.
 Pasta static da área \admin
 ---
 
-Note.: utilize caminhos absolutos.
+Nota.: utilize caminhos absolutos.
 
 Crie a pasta para arquivos estáticos
 
-	mkdir /var/www/html/projetos-django/static
+	mkdir /projetos-django/static
 
 
-Adicione no `/etc/httpd/conf/httpd.conf` as seguites configurações
+No CentOS 5.6
+---
 
-	Alias /static /var/www/html/projetos-django/static
-	<Directory /var/www/html/projetos-django/static>
-	    Options -Indexes
-	    Order allow,deny
-	    Allow from all
-	</Directory>
+1. Adicione no `/etc/httpd/conf/httpd.conf` as seguintes configurações
 
-
-Crie um link simbólico para da pasta static/admin do Django
-
-	ln -s /usr/local/lib/python3.3/site-packages/django/contrib/admin/static/admin /var/www/html/projetos-django/static/
+    Alias /static /projetos-django/static
+    <Directory /projetos-django/static>
+        Options -Indexes
+        Order allow,deny
+        Allow from all
+    </Directory>
 
 
-Reinicie o Apache
+2. Crie um link simbólico para da pasta static/admin do Django
+
+    Com o VirtualEnv desativado:
+    # ln -s /usr/local/lib/python3.3/site-packages/django/contrib/admin/static/admin /projetos-django/static/
+
+    Com o VirtualEnv ativado:
+    # ln -s /pasta-do-virtualenv/lib/python3.3/site-packages/django/contrib/admin/static/admin /projetos-django/static/
+
+3. Reinicie o Apache
 
     /etc/init.d/httpd restart
 
-
-Acesse a página `127.0.0.1/nome-do-projeto/admin` e confira o resultado
-
+4. Acesse a página `127.0.0.1/nome-do-projeto/admin` e confira o resultado
 
 
-Configurando a pasta Static no Django
+
+No Debian 7.5
 ---
 
-Abre o arquivo `/nome-do-projeto/settings.py` e define o PATH da pasta `static`. Pode ser adicionado o PATH absoluto 
-`/home/usuário/projetos/sdd-py/static` ou relativo `os.path.join(os.path.dirname(BASE_DIR), 'static/')`.
+1. Adicione um arquivo de configuração em `etc/apache2/sites-available` com um qualquer nome
 
-	STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),'static/')
+    cd /etc/apache2/sites-available
+    nano django.conf
+
+2. No arquivo django.conf adicione as seguintes linhas:
+
+    Alias /static /projetos-django/static
+    <Directory /projetos-django/static>
+        Options -Indexes
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+3. Para habilitar as configurações digite:
+
+    a2ensite django.conf
+
+4. Crie um link simbólico para da pasta static/admin do Django
+
+    Com o VirtualEnv desativado:
+
+    # ln -s /usr/local/lib/python3.3/site-packages/django/contrib/admin/static/admin /projetos-django/static/
+
+    Com o VirtualEnv ativado:
+
+    # ln -s /pasta-do-virtualenv/lib/python3.3/site-packages/django/contrib/admin/static/admin /projetos-django/static/
+
+5. Reinicie o Apache:
+
+    service apache2 restart
+
+6. Acesse a página `127.0.0.1/nome-do-projeto/admin` e confira o resultado
+
+
+
+Configurando a pasta Static no Django para o Apache
+---
+
+Abre o arquivo `/nome-do-projeto/settings.py` e define a constante STATIC_ROOT para a pasta `static`. Pode ser adicionado 
+o PATH absoluto `/home/usuário/projetos/sdd-py/static` ou relativo `os.path.join(os.path.dirname(BASE_DIR), 'static/')`.
+
+    STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),'static/')
 
 Para copiar todo o conteúdo da pasta `static` do projeto Django para a mesma pasta que contém os arquivos da área admin 
 digite:
 
-	 python manage.py collectstatic
+    python manage.py collectstatic
