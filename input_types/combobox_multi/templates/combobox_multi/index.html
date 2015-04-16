@@ -9,7 +9,7 @@
         <h1>Combobox Multi</h1>
         <p></p>
         <fieldset style="width:250px;">
-            <form action="{% url 'views.enviar' %}" method="POST">
+            <form action="{% url 'enviar' %}" method="POST">
                 {% csrf_token %}
                 <select name='tipo' id='tipo' size='4' multiple>
                    {{html}} 

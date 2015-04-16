@@ -11,7 +11,7 @@
         
         <fieldset style="float:left; width:200px; margin-right: 20px;">
             <legend>Formulário Simples</legend>
-            <form action="{% url 'textbox.views.enviar' %}" method="POST">
+            <form action="{% url 'enviar' %}" method="POST">
                 {% csrf_token %}
                 <label for='titulo'>Título: </label><br>
                 <input type='text' id='titulo' name='titulo' placeholder="Titulo"/><br>

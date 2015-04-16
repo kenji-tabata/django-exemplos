@@ -10,7 +10,7 @@
         <p></p>
         <fieldset style="width:400px;">
             <legend>Assinatura</legend>
-            <form method="POST" action="{% url 'views.enviar' %}">
+            <form method="POST" action="{% url 'enviar' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit">Enviar</button>

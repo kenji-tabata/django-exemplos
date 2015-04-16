@@ -9,7 +9,7 @@
         <h1>Django Forms: Checkbox Multi</h1>
         <p></p>
         <div style="float:left; width:400px">
-            <form method="POST" action="{% url 'views.enviar' %}">
+            <form method="POST" action="{% url 'enviar' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit">Enviar</button>

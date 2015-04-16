@@ -6,14 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <p><a href="{% url 'views.select_all' %}">Mostrar todos</a></p>
-        <p><a href="{% url 'views.select_id' pk=3 %}">Mostrar por id</a></p>
-        <p><a href="{% url 'views.select_first' %}">Mostrar primeiro registro</a></p>
-        <p><a href="{% url 'views.select_filter' %}">Mostrar com filtro</a></p>
-        <p><a href="{% url 'views.select_order_desc' %}">Mostrar por ordem de nome decrescente</a></p>
-        <p><a href="{% url 'views.select_like' nome='Caio' %}">Mostrar com LIKE</a></p>
-        <p><a href="{% url 'views.select_inner_join' %}">Mostrar todos com INNER JOIN</a></p>
-        <p><a href="{% url 'views.select_combined' %}">Mostrar todos com filtro, ordenação e INNER JOIN</a></p><br>
+        <p><a href="{% url 'select_all' %}">Mostrar todos</a></p>
+        <p><a href="{% url 'mostrar_pelo_id' pk=2 %}">Mostrar por id</a></p>
+        <p><a href="{% url 'mostrar_primeiro' %}">Mostrar primeiro registro</a></p>
+        <p><a href="{% url 'mostrar_filtro' %}">Mostrar com filtro</a></p>
+        <p><a href="{% url 'mostrar_ordem_desc' %}">Mostrar por ordem de nome decrescente</a></p>
+        <p><a href="{% url 'mostrar_like' nome='Caio' %}">Mostrar com LIKE</a></p>
+        <p><a href="{% url 'mostrar_todos_inner_join' %}">Mostrar todos com INNER JOIN</a></p>
+        <p><a href="{% url 'mostrar_especifico' %}">Mostrar todos com filtro, ordenação e INNER JOIN</a></p><br>
         
         
         {% for usuario in usuarios %}

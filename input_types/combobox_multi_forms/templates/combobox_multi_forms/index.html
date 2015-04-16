@@ -9,7 +9,7 @@
         <h1>Django Forms: Combobox Multi</h1>
         <p></p>
         <fieldset style="width:250px;">
-            <form method="POST" action="{% url 'views.enviar' %}">
+            <form method="POST" action="{% url 'enviar' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit">Enviar</button>

@@ -10,7 +10,7 @@
         <p></p>
         <fieldset style="width:400px;">
             <legend>Assinatura</legend>
-            <form action="{% url 'checkbox.views.enviar' %}" method="POST">
+            <form action="{% url 'enviar' %}" method="POST">
                 {% csrf_token %}
                 <label for="email">E-mail:</label>
                 <input type="email" name="email" id="email"/><br/>

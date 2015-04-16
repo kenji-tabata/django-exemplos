@@ -10,7 +10,7 @@
         <p></p>
         <fieldset style="width:400px;">
             <legend>Sexo</legend>
-            <form action="{% url 'radio_button.views.enviar' %}" method="POST">
+            <form action="{% url 'enviar' %}" method="POST">
                 {% csrf_token %}
                 <label for='masc'>Masculino</label>
                 <input type='radio' name='sexo' id='masc' value='masculino'><br>

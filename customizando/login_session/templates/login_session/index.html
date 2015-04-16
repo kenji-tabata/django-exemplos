@@ -8,7 +8,7 @@
     <body>
         {{status}}
         
-        <form method="POST" action="{% url 'views.login_user' %}">
+        <form method="POST" action="{% url 'login' %}">
             {% csrf_token %}
             {% if next %}
 		<input type="hidden" name="next" value="{{ next }}" />
