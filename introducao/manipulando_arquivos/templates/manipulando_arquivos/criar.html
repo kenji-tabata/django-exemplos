@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manipulação de Arquivos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Manipulando arquivos</h1>
+        <h2>Criando arquivo</h2>
+        <form action="{% url 'criar_arquivo' %}" method="POST" name="criar_arquivo">
+            {% csrf_token %}
+            <label for="nome">Nome do Arquivo: </label><br>
+            <input type="text" id="nome" name="nome"/><br>
+            <label for="conteudo">Conteúdo do arquivo: </label><br>
+            <textarea id="conteudo" name="conteudo"></textarea><br>
+            
+            <input type="submit" value="Enviar">
+        </form>
+        <p><a href="{% url 'index' %}">Voltar</a></p>
+    </body>
+</html>
