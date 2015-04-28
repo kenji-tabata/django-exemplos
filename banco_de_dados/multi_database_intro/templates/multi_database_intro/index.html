@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multi Database: Introdução</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p><a href="{% url 'trocar' tipo='default' %}">Default</a></p>
+        <p><a href="{% url 'trocar' tipo='exemplos_dj_add' %}">App</a></p>
+
+        <p>Database: {{ tipo }}</p>
+
+        {% if posts %}
+            {% for post in posts%}
+                <p>Título: {{ post.titulo }}</p>
+                <p>Conteúdo: {{ post.conteudo }}</p>
+            {% endfor%}
+        {% else %}
+            <p>Nenhuma postagem encontrada</p>
+        {% endif %}
+    </body>
+</html>
+
+

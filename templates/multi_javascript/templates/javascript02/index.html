@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multi Javascript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- JQuery compartilhado para todas as aplicações do projeto e em outros projetos do Apache-->
+        <script type="text/javascript" src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+        
+        <!-- Javascript compartilhado para todas as aplicações do projeto e em outros projetos do Apache -->
+        <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+        <!-- CSS compartilhado para todas as aplicações do projeto e em outros projetos do Apache -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+        
+        <!-- Javascript compartilhado entre todas as aplicações do projeto -->
+        <script type="text/javascript" src="{% static 'multi_javascript/js/script_mj.js' %}"></script>
+        <!-- CSS compartilhado entre todas as aplicações do projeto -->
+        <link rel="stylesheet" type="text/css" href="{% static 'multi_javascript/css/style_mj.css' %}"/>
+        
+        <!-- Javascript acessado somente pela aplicação javascript02 -->
+        <script type="text/javascript" src="{% static 'multi_javascript/javascript02/js/javascript_js02.js' %}"></script>
+        <!-- CSS acessado somente pela aplicação javascript02 -->
+        <link rel="stylesheet" type="text/css" href="{% static 'multi_javascript/javascript02/css/style_js02.css' %}"/>
+        
+    </head>
+    <body onload="startTime(), tempo()">
+        <img src="{% static 'imagem/logo.png' %}" alt='logo' title='DOM'/>
+        <a href="{% url 'views.index' %}">Index</a> | 
+        <a href="{% url 'pagina' %}">Pagina Extra</a> | 
+        
+        <a href="{% url 'javascript01:index' %}">JavaScript 01</a> | 
+        <a href="{% url 'javascript02:index' %}">JavaScript 02</a> | 
+        <a href="{% url 'javascript03:index' %}">JavaScript 03</a> 
+        <h1>Java Script 02</h1>
+        
+        <p>O script da Hora Atual está na pasta `static/js`</p>
+        <p>Hora atual <span id="txt"></span></p>
+        
+        <p>O script do Cronometro está na pasta `static/multi_javasrcipt/javascript02/js`</p>
+        <p><b>Teste do Código:</b></p>
+        <div class="codigo">
+            <span id="hora">00h</span><span id="minuto">00m</span><span id="segundo">00s</span><br>
+            <input type="button" value="Volta" onclick="volta();"><br>
+            <div id="parar"><input type="button" value="Parar" onclick="parar();"></div>
+            <div id="comeca" style="display:none;"><input type="button" value="Comeca" onclick="tempo(1);"><br></div>
+            <input type="button" value="Limpa" onclick="limpa();"><br><br>
+            <div id="voltas"></div>
+        </div>
+    </body>
+</html>

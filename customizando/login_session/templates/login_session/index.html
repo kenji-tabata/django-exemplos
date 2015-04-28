@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login com Session</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        {{status}}
+        
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            {% if next %}
+		<input type="hidden" name="next" value="{{ next }}" />
+            {% endif %}
+            <label for='usuario'>Usuário: </label>
+            <input type="text" name="username" id="usuario" value="{{ username }}" /><br />
+            <label for="senha">Senha: </label>
+            <input type="password" name="password" id="senha" value="" /><br />
+
+            <input type="submit" value="Log In" />
+        </form>
+    </body>
+</html>

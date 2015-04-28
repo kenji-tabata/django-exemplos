@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>11. Testando View no Shell</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'adicionar' %}">Adicionar</a></li>
+        </ul>
+        <h1>Adicionar</h1>
+        <form action="{% url 'enviar' %}" method='POST'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value='Enviar'>
+        </form>
+        
+    </body>
+</html>

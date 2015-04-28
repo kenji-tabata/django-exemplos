@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Django Forms: Radio Button</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Django Forms: Radio Buttom</h1>
+        <fieldset style="width:400px;">
+            <form method="POST" action="{% url 'enviar' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Enviar</button>
+            </form>
+        </fieldset>
+        <div style="float:left; width:400px">
+            {% if listar_radio %}
+                {% for radio in listar_radio %}
+                    {% if radio.sexo == "m" %}
+                        <p>Masculino</p>
+                        
+                    {% else %}
+                        <p>Feminino</p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </body>
+</html>

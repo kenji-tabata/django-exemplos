@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manipulação de Arquivos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Manipulando arquivos</h1>
+        <h2>Ler conteúdo do arquivo</h2>
+        <form action="{% url 'ler_arquivo' tipo='leitura' %}" method="POST">
+            {% csrf_token %}
+            <select name='nome' id='nome'>
+               {{html}} 
+            </select><br/>
+            <input type="submit" id='enviar' name='enviar' value='Enviar'><br>
+        </form>
+        
+        <h3>{{ nome_arquivo }}</h3>
+        <p>{{ leitura }}</p>
+        
+        <p><a href="{% url 'index' %}">Voltar</a></p>
+    </body>
+</html>

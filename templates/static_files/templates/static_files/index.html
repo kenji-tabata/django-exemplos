@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Static Files</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+        <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    </head>
+    <body onload='startTime()'>
+        <img src="{% static 'imagem/logo.png' %}" alt='logo' title='DOM'/>
+        <h1>Hello World</h1>
+        <p>Hora atual <span id="txt"></span></p>
+    </body>
+</html>

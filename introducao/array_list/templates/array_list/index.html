@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Array List</h1>
+        
+        <h3>Objetivo:</h3>
+        <p>Mostrar na página HTML uma lista ou um dado especifico de um Array List (Dicionário)</p>
+        
+        <h3>Exemplo de Dicionário</h3>
+        <p>dados = {'key1': 'Reposta 01', 'key2': 'Reposta 02', 'key3': 'Reposta 03', 'key4': 'Reposta 04'}</p>
+        
+        <h3>Exibir apenas um valor especifico (ex.: da key2):</h3>
+        
+        <p>No Template adicione:</p>
+        <code>&#123;&#123; dados.key2 &#125;&#125;</code>
+        
+        <p>Retorna: {{ dados.key2 }}</p>
+        
+        <h3>Exibir todos os valores como uma lista de dados</h3>
+        
+        <p>No Template adicione:</p>
+        <code>
+            &#123;% for key, value in dados.items %&#125;<br>
+                Key: &#123;&#123; key &#125;&#125;<br>
+                Valor: &#123;&#123; value &#125;&#125;<br>
+            &#123;% endfor %&#125;<br>
+        </code>
+        
+        <p>Retorna: </p>
+        {% for key, value in dados.items %}
+            Key: {{ key }}<br>
+            Valor: {{ value }}<br><br>
+        {% endfor %}
+    </body>
+</html>

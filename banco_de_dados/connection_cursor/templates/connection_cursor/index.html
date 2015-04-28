@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Connection e Cursor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p><a href="{% url 'select_all' %}">Mostrar todos</a></p>
+        <p><a href="{% url 'mostrar_pelo_id' pk=2 %}">Mostrar por id</a></p>
+        <p><a href="{% url 'mostrar_primeiro' %}">Mostrar primeiro registro</a></p>
+        <p><a href="{% url 'mostrar_filtro' %}">Mostrar com filtro</a></p>
+        <p><a href="{% url 'mostrar_ordem_desc' %}">Mostrar por ordem de nome decrescente</a></p>
+        <p><a href="{% url 'mostrar_like' nome='Caio' %}">Mostrar com LIKE</a></p>
+        <p><a href="{% url 'mostrar_todos_inner_join' %}">Mostrar todos com INNER JOIN</a></p>
+        <p><a href="{% url 'mostrar_especifico' %}">Mostrar todos com filtro, ordenação e INNER JOIN</a></p><br>
+        
+        <div style="width:400px; float: left; border: 1px solid #CCC;">
+            <form action="{% url 'ins_usuario' %}" method="POST" name="add_user">
+                {% csrf_token %}
+                <label for="nome">Nome: </label>
+                <input type='text' name='nome' id='nome' required><br>
+                <label for="email">Email: </label>
+                <input type='email' name='email' id='email' required><br>
+                <input type="submit" id='enviar' name='enviar' value='Enviar'><br>
+            </form>
+        </div>
+        <div style="width:400px; float: left; border: 1px solid #CCC;">
+            <form action="{% url 'ins_cometario' %}" method="POST" name="add_comment">
+                {% csrf_token %}
+                <label for="usuario_id">ID do usuário:</label>
+                <input type="number" name="usuario_id" id="usuario_id"><br>
+                <label for="mensagem">Mensagem:</label>
+                <textarea name="mensagem" id="mensagem"></textarea><br>
+                <input type="submit" id='enviar_c' name='enviar_c' value='Enviar Comentário'><br>
+            </form>
+        </div>
+        <div style="width:1200px; float: left;">
+            {% if usuarios %}
+                {% for usuario in usuarios %}
+                    <p>Resultado em Array: {{ usuario }}
+                    <p>Nome: {{ usuario.nome }} - 
+                        <a href="{% url 'up_usuario' pk=usuario.id %}">Editar</a> - 
+                        <a href="{% url 'del_usuario' pk=usuario.id %}">Deletar</a></p>
+                    <p>Email: {{ usuario.email }}</p>
+
+                    {% if usuario.mensagem %}
+                        <p>Comentário: {{ usuario.mensagem }}<p><br>
+                    {% endif %}
+                    <br>
+                {% empty %}
+                    <p>Lista de usuário vazia.</p>
+                {% endfor %}
+
+            {% elif usuario %}
+                <p>Nome: {{ usuario.nome }}</p>
+                <p>Email: {{ usuario.email }}</p><br>
+
+            {% else %}
+                <p>Lista de usuário vazia.</p>
+            {% endif %}
+        </div>
+       
+    </body>
+</html>

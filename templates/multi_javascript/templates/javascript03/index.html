@@ -1,0 +1,53 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multi Javascript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- JQuery compartilhado para todas as aplicações do projeto e em outros projetos do Apache-->
+        <script type="text/javascript" src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+        
+        <!-- Javascript compartilhado para todas as aplicações do projeto e em outros projetos do Apache -->
+        <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+        <!-- CSS compartilhado para todas as aplicações do projeto e em outros projetos do Apache -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+        
+        <!-- Javascript compartilhado entre todas as aplicações do projeto -->
+        <script type="text/javascript" src="{% static 'multi_javascript/js/script_mj.js' %}"></script>
+        <!-- CSS compartilhado entre todas as aplicações do projeto -->
+        <link rel="stylesheet" type="text/css" href="{% static 'multi_javascript/css/style_mj.css' %}"/>
+        
+        <!-- Javascript acessado somente pela aplicação javascript03 -->
+        <script type="text/javascript" src="{% static 'multi_javascript/javascript03/js/javascript_js03.js' %}"></script>
+        <!-- CSS acessado somente pela aplicação javascript03 -->
+        <link rel="stylesheet" type="text/css" href="{% static 'multi_javascript/javascript03/css/style_js03.css' %}"/>
+        
+    </head>
+    <body onload="startTime(); abrir()">
+        <img src="{% static 'imagem/logo.png' %}" alt='logo' title='DOM'/>
+        <a href="{% url 'views.index' %}">Index</a> | 
+        <a href="{% url 'pagina' %}">Pagina Extra</a> | 
+        
+        <a href="{% url 'javascript01:index' %}">JavaScript 01</a> | 
+        <a href="{% url 'javascript02:index' %}">JavaScript 02</a> | 
+        <a href="{% url 'javascript03:index' %}">JavaScript 03</a> 
+        <h1>Java Script 03</h1>
+        
+        <p>O script da Hora Atual está na pasta `static/js`</p>
+        <p>Hora atual <span id="txt"></span></p>
+        
+        <p>O script do Checkbox está na pasta `static/multi_javasrcipt/javascript03/js`</p>
+        Clique no <i>CheckBox</i> Principal para selecionar todos os outros.
+        <p><b>Teste do Código:</b></p>
+        <form name="form">
+            <input type="checkbox" name="principal" id='principal'><label for='principal'>Principal</label><br>
+            <input type="checkbox" name="checkbox1" id='item01'><label for='item01'>Item 01<br>
+            <input type="checkbox" name="checkbox2" id='item02'><label for='item02'>Item 02<br>
+            <input type="checkbox" name="checkbox3" id='item03'><label for='item03'>Item 03<br>
+            <input type="checkbox" name="checkbox4" id='item04'><label for='item04'>Item 04<br>
+            <input type="checkbox" name="checkbox5" id='item05'><label for='item05'>Item 05
+        </form>
+    </body>
+</html>

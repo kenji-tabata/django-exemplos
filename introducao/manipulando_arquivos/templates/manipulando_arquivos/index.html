@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manipulação de Arquivos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Manipulando arquivos</h1>
+        {{arquivo}}
+        <h2><a href="{% url 'criar_arquivo' %}">Criando arquivo</a></h2>
+        <h2><a href="{% url 'ler_arquivo' tipo='leitura' %}">Ler conteúdo do arquivo</a></h2>
+        <h2><a href="{% url 'ler_arquivo' tipo='edicao' %}">Editar arquivo</a></h2>
+        <h2><a href="{% url 'ler_arquivo' tipo='adicao' %}">Adicionando conteúdo no arquivo</a></h2>
+        <h2><a href="{% url 'ler_arquivo' tipo='deletar' %}">Deletar arquivo</a></h2>
+    </body>
+</html>

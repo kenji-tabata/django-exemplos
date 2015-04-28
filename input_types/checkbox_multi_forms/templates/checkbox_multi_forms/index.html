@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Django Forms: Checkbox Multi</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Django Forms: Checkbox Multi</h1>
+        <p></p>
+        <div style="float:left; width:400px">
+            <form method="POST" action="{% url 'enviar' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div style="float:left; width:400px">
+            {% if listar_check %}
+                {% for check in listar_check %}
+                    <b>Tipo: </b> {{ check.tipo }}<br><br>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </body>
+</html>
