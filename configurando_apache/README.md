@@ -81,6 +81,9 @@ No Debian 7.5
         service apache2 reload
 
 
+Nota.: Caso tenha vários projetos Django no servidor Apache, ative com o comando a2ensite para apenas um projeto, evitando 
+assim a página de erro 500 (Erro interno no Servidor)
+
 Para ver mensagens do arquivo de LOG do Apache no terminal
 
         nano /var/log/apache2/error_log
