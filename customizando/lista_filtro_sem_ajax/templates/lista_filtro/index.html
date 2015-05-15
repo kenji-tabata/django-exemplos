@@ -1,0 +1,22 @@
+{% extends 'lista_filtro/base.html' %}
+
+{% block conteudo %}
+    <table id="table_list">
+        <thead>
+             <tr>
+                 {{html}}
+             </tr>
+        </thead>
+         <tbody>
+             {% for usuario in list_user %}
+                 <tr>
+                     <td style="width: 80px">{{usuario.id}}</td>
+                     <td><a href="#">{{usuario.nome}}</a></td>
+                     <td>{{usuario.email}}</td>
+                     <td>{{usuario.data}}</td>
+                     <td>{{usuario.status}}</td>
+                 </tr>
+             {% endfor %}
+         </tbody>
+     </table>
+{% endblock conteudo %}
