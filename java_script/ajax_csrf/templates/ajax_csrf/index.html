@@ -1,0 +1,58 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>AJAX CSRF</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/conf_csrf.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+        
+    </head>
+    <body>
+        <div id="content">
+            <div id="user-list" style="float: left; width: 50%;">
+                <h1>Usuário</h1>
+                <form action="{% url 'enviar' %}" name="formulario" id="formulario" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Enviar" id="enviar"/>
+                </form>
+                {% if listar_usuarios %}
+                    {% for usuario in listar_usuarios %}
+                        <p>
+                            <b>Nome: </b> {{ usuario.nome }}<br>
+                            <b>E-mail: </b> {{usuario.email}}<br>
+                        </p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+
+
+            <div id="comment-list" style="float: left; width: 50%;">
+                <h1>Comentário</h1>
+                <form action="{% url 'enviar_comentario' %}" name="comment" id="comment" method="POST">
+                    {% csrf_token %}
+                    {{ form_comment.as_p }}
+                    <input type="submit" value="Enviar" id="enviar-comment"/>
+                </form>
+                {% if listar_comentarios %}
+                    {% for comentario in listar_comentarios %}
+                        <p>
+                            <b>Assunto: </b> {{comentario.assunto}}<br>
+                            <b>Data: </b> {{comentario.data}}<br>
+                            <b>Comentário: </b> {{ comentario.msg }}<br>
+                        </p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>
