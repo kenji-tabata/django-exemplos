@@ -7,27 +7,23 @@
     </head>
     <body>
         <h1>Instruções</h1>
-        <p>Para inserir mais registros no model abre o Shell do Django e digite os seguintes comandos.</p>
+        <p>Para inserir mais registros no model abra o Shell do Django e digite os seguintes comandos.</p>
         
-        <p>
-            <b># Importe o model do projeto</b><br/>
-            >>> from models.models import Post
-        </p>
-        
-        <p>
-            <b># Importe o módulo de data e hora do Django</b><br/>
-            from datetime import datetime
-        </p>
+        <pre>
+            <code>
+# Importe o model do projeto
+>>> from models.models import Post
 
-        <p>
-            <b># Para inserir um objeto Post (registro)</b><br/>
-            Post.objects.create(titulo="Teste de notas", data=datetime.now(), conteudo="Bloco de texto")
-        </p>
-        
-        <p>
-            <b># Para visualizar no Shell todos os objetos cadastrados digite:</b><br/>
-            >>> Post.objects.all()
-        </p>
+# Importe o módulo de data e hora do Django
+from datetime import datetime
+
+# Para inserir um objeto Post (registro)
+Post.objects.create(titulo="Teste de notas", data=datetime.now(), conteudo="Bloco de texto")
+
+# Para visualizar no Shell todos os objetos cadastrados digite:
+>>> Post.objects.all()
+            </code>
+        </pre>
         
         <h1>Lista de Post</h1>
         {% if listar_posts %}
