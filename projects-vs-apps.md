@@ -28,7 +28,7 @@ Após a execução do comando teremos uma estrutura semelhante a exibida abaixo.
             urls.py
             wsgi.py
 
-Após incluirmos algumas appas nossa estrutura será parecida com a seguinte.
+Após incluirmos algumas apps, nossa estrutura será modificada como se segue.
 
     mysite/
         manage.py
