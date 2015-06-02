@@ -8,12 +8,9 @@ O Objetivo é mais para utilizar como uma fonte de informações sobre o que faz
 como formulários, criar arquivos pdf, adicionar imagens e entre outros.
 
 
-
-python -c "import django; print(django.get_version())"
-
-
-Veja primeiro
+Primeiro passos co Django...
 ---
 
 - [Qual versão?](qual-versao.md)
 - [Projects vs. apps](projects-vs-apps.md)
+- [Criando seu primeiro projeto](criando-um-projeto.md)
