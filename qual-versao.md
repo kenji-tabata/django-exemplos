@@ -1,7 +1,6 @@
 Qual versão usar?
 ---
 
-
 Quando comei a estudar o Django ele estava na versão 1.6, meus primeiros
 passos forma nessa versão.
 
@@ -27,3 +26,20 @@ Ou, se preferir, ser mais suscinto....
     python -c "import django; print(django.get_version())"
 
 
+Dica
+===
+
+Quando instalamos o Python 3, normalmente não desinstalamos o Python 2, então
+você terá os dois em sua máquina. Experimente...
+
+$ python -version
+$ python3 -version
+
+Algumas variações podem ser....
+
+$ python3.2 -version
+$ python3.4 -version
+
+Se estiver usando o Django 1.7 deverá usar Python 3.
+
+Leia o seguinte artigo para [instalar o Python 3](http://www.devfuria.com.br/linux/cookbook/python/)
