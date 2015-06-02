@@ -1,11 +1,10 @@
 Django Exemplos
 ===
 
-Contém diversos exemplos práticos de aplicações que auxiliam no desenvolvimento de projetos desenvolvidos no Django, 
-começando desde o básico ao criar uma página com "Hello World" e indo até a utilização de módulos como Reportlab e Pillow.
+Contém diversos exemplos práticos de aplicações Django.
 
-O Objetivo é mais para utilizar como uma fonte de informações sobre o que fazer para criar uma determinada parte do site,
-como formulários, criar arquivos pdf, adicionar imagens e entre outros.
+O Objetivo é mais para utilizar como uma fonte de consulta de como fazer determinado objetivo, exemplo:
+trabalhar com formulários, criar arquivos pdf, adicionar imagens, etc...
 
 
 Primeiro passos com Django...
@@ -15,3 +14,23 @@ Primeiro passos com Django...
 - [Projects vs. apps](projects-vs-apps.md)
 - [Criando seu primeiro projeto](criando-um-projeto.md)
 - [Criando Modelos (ou criando apps?)](criando-modelos.md)
+- [Experimentando a API (Playing with the API)](experimentando-api-terminal.md)
+
+
+Demais artigos
+---
+
+- [foo](#)
+- [foo](#)
+- [foo](#)
+
+
+
+Projetos de exemplo
+---
+
+Aqui começam os exemplos de fato.
+
+- [exemplo tal](#)
+- [exemplo tal](#)
+- [exemplo tal](#)
