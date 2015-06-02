@@ -12,46 +12,36 @@ What’s the difference between a project and an app?
   An app can be in multiple projects.
 
 
-mysite/
-    manage.py
-    mysite/
-        __init__.py
-        settings.py
-        urls.py
-        wsgi.py
-    app1/
-        __init__.py
-        settings.py
-        urls.py
-        wsgi.py
-    app2/
-        __init__.py
-        settings.py
-        urls.py
-        wsgi.py
-    app3/
-        __init__.py
-        settings.py
-        urls.py
-        wsgi.py
-
-
-
-Creating a project
----
-
+Para criar um projeto executamos...
 
     $ django-admin startproject mysite
 
-[1.8/intro/tutorial01/#creating-a-project](https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-a-project)
+Onde `mysite` será o nome e a pasta de seu projeto.
 
+Após a execução do comando teremos uma estrutura semelhante a exibida abaixo.
 
+    mysite/
+        manage.py
+        mysite/
+            __init__.py
+            settings.py
+            urls.py
+            wsgi.py
 
-Activating models (apps?)
----
+Após incluirmos algumas appas nossa estrutura será parecida com a seguinte.
 
-Será um model  equivalente a uma app ?
+    mysite/
+        manage.py
+        mysite/
+            __init__.py
+            settings.py
+            urls.py
+            wsgi.py
+        app1/
+        app2/
+        app3/
 
+Os modelos são ativados alterando o arquivo `mysite/settings.py` conforme exemplo abaixo.
 
     INSTALLED_APPS = (
         'django.contrib.admin',
@@ -64,3 +54,6 @@ Será um model  equivalente a uma app ?
         'app2',
         'app3',        
     )
+
+
+Será um model equivalente a uma app ?
