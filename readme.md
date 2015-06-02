@@ -3,7 +3,7 @@ Django Exemplos
 
 Contém diversos exemplos práticos de aplicações Django.
 
-O Objetivo é mais para utilizar como uma fonte de consulta de como fazer determinado objetivo, exemplo:
+O uso deste repositório é indicado como uma fonte de consulta de como chegar a determinado objetivo, exemplo:
 trabalhar com formulários, criar arquivos pdf, adicionar imagens, etc...
 
 
