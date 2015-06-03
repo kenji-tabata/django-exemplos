@@ -1,11 +1,11 @@
 Criando Modelos (ou criando apps?)
 ===
 
-Aqui ampliamos discussão ["Projects vs. apps"](projects-vs-apps.md) para Modelos ou Apps?
+Aqui ampliamos discussão ["Projects vs. apps"](projects-vs-apps.md) para "modelos ou apps ?".
 
 Mas, independente desse entendimento, vamos colocar a mão na massa...
 
-Considerando os passos dos artigos anteriores, podemos criar uma aap em seu projeto.
+Considerando os passos dos artigos anteriores, podemos criar uma app em seu projeto.
 
 Vá até o seu  projeto, ex: `cd /projetos/mysite` e crie um novo modelo chamado `polls`.
 
