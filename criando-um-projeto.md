@@ -92,9 +92,8 @@ Você deve ver um atarga azul com os dizeres...
     It worked!
     Congratulations on your first Django-powered page.
 
-O Django vem com um servidor web embutido, o que fizemos foi acioná-lo. 
-Isso significa que não precisamos de um servidor web instalado para testarmos a 
-aplicação. Mas não devemos usar o servidor interno no ambiente de produção, 
-neste caso devemos fazer o processo correto de deploy, ou seja, integrar o 
-servidor web com o Python/Django.
+O Django vem com um servidor web embutido, o que fizemos foi acioná-lo.  Isso significa que não 
+precisamos de um servidor web instalado para testarmos a aplicação. Mas não devemos usar o servidor 
+interno no ambiente de produção, neste caso devemos fazer o processo correto de deploy, ou seja, 
+integrar o servidor web com o Python/Django.
 
