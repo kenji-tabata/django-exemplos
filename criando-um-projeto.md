@@ -82,18 +82,16 @@ Seu terminal deve ser semelhanta ao exibido abaixo.
     0 errors found
     June 02, 2015 - 15:50:53
     Django version 1.8, using settings 'mysite.settings'
-    Starting development server at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+    Starting development server at http://127.0.0.1:8000/
     Quit the server with CONTROL-C.
 
-Acesse pelo navegasdor o link [http://127.0.0.1:8000/](http://127.0.0.1:8000/
+Acesse pelo navegador o link [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
-Você deve ver um atarga azul com os dizeres...
+Você deve ver uma página HTML com uma tarja azul com os dizeres...
 
     It worked!
     Congratulations on your first Django-powered page.
 
-O Django vem com um servidor web embutido, o que fizemos foi acioná-lo.  Isso significa que não 
-precisamos de um servidor web instalado para testarmos a aplicação. Mas não devemos usar o servidor 
-interno no ambiente de produção, neste caso devemos fazer o processo correto de deploy, ou seja, 
-integrar o servidor web com o Python/Django.
-
+O Django vem com um servidor web embutido, o que fizemos foi acioná-lo.  Isso significa que não precisamos de um 
+servidor web instalado para testarmos a aplicação. Mas __não__ devemos usar o servidor interno no ambiente de produção, 
+neste caso devemos fazer o processo correto de deploy, ou seja, integrar o servidor web com o Python/Django.
