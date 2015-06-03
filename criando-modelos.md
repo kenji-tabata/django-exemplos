@@ -7,9 +7,8 @@ Mas, independente desse entendimento, vamos colocar a mão na massa...
 
 Considerando os passos dos artigos anteriores, podemos criar uma app em seu projeto.
 
-Vá até o seu  projeto, ex: `cd /projetos/mysite` e crie um novo modelo chamado `polls`.
-
-Veja o significado de [pull](https://translate.google.com.br/?hl=pt-BR&authuser=0#en/pt/poll).
+Vá até o seu  projeto, ex: `cd /projetos/mysite` e crie um novo modelo chamado `polls` (veja o significado de 
+[poll](https://translate.google.com.br/?hl=pt-BR&authuser=0#en/pt/poll)).
 
 O comando abaixo cria uma nova app em seu projeto.
 
@@ -76,7 +75,7 @@ Precisamos avisar ao Django para incluir a app, execute o comando abaixo.
 
     $ python3 manage.py makemigrations polls
 
-Após isso, não é obrigatório, você pode checar se seu modelo está OK.
+Após isso, não é obrigatório, mas você pode checar se seu modelo está OK.
 
     $ python3 manage.py check
 
@@ -85,14 +84,14 @@ E também pode quere ver o SQL gerado.
     $ python3 manage.py sqlmigrate polls 0001
 
 
-Se tudo OK, podemos então criar as tabelas necessáris em nosso bvanco de dados com o comando abaixo.
+Se tudo OK, podemos então criar as tabelas necessáris em nosso banco de dados com o comando abaixo.
 
     $ python3 manage.py migrate    
 
 
-Migrações (migrations) é um recurso que auxila o desnevolvimento no tocante a alterações no banco de dados.
+Migrações (migrations) é um recurso que auxila o desenvolvimento no tocante as alterações realizadas no banco de dados.
 Você pode deletar, criar ou alterar tabelas, ou seja, manipular seu banco de dados através do Django, quer dizer, sem 
-ter que mexer na interface do banco.
+ter que mexer na interface do DB.
 
 
 ###  Organizando o processo...
