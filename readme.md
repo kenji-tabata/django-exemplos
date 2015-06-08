@@ -31,6 +31,6 @@ Projetos de exemplo
 
 Aqui começam os exemplos de fato.
 
-- [Raw Query](models/raw-query)
+- [Performing raw SQL queries](db/raw-query)
 - [exemplo tal](#)
 - [exemplo tal](#)
