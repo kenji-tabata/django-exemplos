@@ -31,6 +31,6 @@ Projetos de exemplo
 
 Aqui começam os exemplos de fato.
 
-- [Raw Query](modelos/raw-query)
+- [Raw Query](models/raw-query)
 - [exemplo tal](#)
 - [exemplo tal](#)
