@@ -2,7 +2,7 @@ Criando seu primeiro projeto
 ===
 
 Você deve ter o Pytohn e o Django devidamente instalados, mas ao invês de 
-utilizar sua máquina como ambiente dê preferência para o 
+utilizar sua máquina como ambiente, dê preferência para o 
 [virtualenv](http://www.devfuria.com.br/python/virtualenv/).
 
 
@@ -25,12 +25,11 @@ Neste instante deveríamos esta prontos para ver um "Hello World", mas antes é
 preciso configurar o banco de dados.
 
 
-database-setup
+Database setup
 ---
 
-Se você analisar o arquivo `mysite/settings.py`, na seção `DATABASES` esta 
-apontando para um arquivo em SQLite
-chamado `db.sqlite3`.
+Se você analisar a seção `DATABASES` no arquivo `mysite/settings.py`, verá que a aplicação está apontando para um 
+arquivo em SQLite chamado `db.sqlite3`.
 
     DATABASES = {
         'default': {
@@ -39,8 +38,7 @@ chamado `db.sqlite3`.
         }
     }
 
-Ele é instalado como padrão, isso ajuda pois não precisamos de maiores 
-configurações de banco de dados, pois podermos
+Ele é instalado como padrão, isso ajuda pois não precisamos de maiores configurações de banco de dados, pois podermos
 fazer isso mais tarde.
 
 O que precisamos fazer é "migrar" as bases de dados da seção `INSTALLED_APPS` 
@@ -49,7 +47,7 @@ com o seguinte comando....
 
     $python3 manage.py migrate
 
-Sua tela deve ser semelhanta ao exibido abaixo.
+Sua tela deve ser semelhante ao exibido abaixo.
 
     Operations to perform:
       Apply all migrations: admin, contenttypes, auth, sessions
