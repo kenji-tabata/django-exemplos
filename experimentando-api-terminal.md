@@ -19,7 +19,7 @@ Ou, se preferir, execute...
 
 Importe os modelos que você precisar.
 
->>> from polls.models import Question, Choice
+    >>> from polls.models import Question, Choice
 
 Possuímos alguns registros?
 
@@ -55,7 +55,7 @@ Se alteramos alguma coisa, não podemos esquecer de persistir o objeto.
     >>> q.save()
 
 
-### __str__
+### \_\_str\_\_
 
 E agora, como está nossa tabela?
 
@@ -63,8 +63,7 @@ E agora, como está nossa tabela?
     [<Question: Question object>]
 
 Essa não é uma boa representação de nossos objetos, para melhorarmos isso vamos alterar o arquivo `/mysite/polls/models.py`
-conforme o conteúdo abaixo.
-
+conforme o conteúdo abaixo (repare que parte do conteúdo já existente deve permanecer).
 
     from django.db import models
 
@@ -78,15 +77,12 @@ conforme o conteúdo abaixo.
         def __str__(self):
             return self.choice_text
 
-Repare que parte do conteúdo já existente deve permanecer.
-
 Vamos aproveitar e incluir o seguinte trecho ao arquivo.
 
     import datetime
 
     from django.db import models
     from django.utils import timezone
-
 
     class Question(models.Model):
         # ...
@@ -105,7 +101,7 @@ Vamos testar nossa função `__str__()`?
     >>> Question.objects.all()
     [<Question: What's up?>]
 
-Podemos filtrar o conteúdo através da API, por exemplo...
+Também podemos filtrar o conteúdo através da API, por exemplo...
 
     >>> Question.objects.filter(id=1)
     [<Question: What's up?>]
