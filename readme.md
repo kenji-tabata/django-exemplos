@@ -31,6 +31,7 @@ Projetos de exemplo
 
 Aqui começam os exemplos de fato.
 
-- [Performing raw SQL queries](db/raw-query.mb)
+- [Performing raw SQL queries](db/raw-query.md)
 - [Executing custom SQL directly](db/connection-cursor.md)
-- [exemplo tal](#)
+- [Connection PyMySQL](db/connection-pymysql.md)
+- [Connections and cursors](db/connections-and-cursors.md)

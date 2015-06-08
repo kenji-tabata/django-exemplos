@@ -1,4 +1,4 @@
-Connection & Cursor
+Connections and cursors
 ===
 
 Neste exemplo é mostrado como utilizar o Cursor do Django para executar as query SQL diretamente sem a necessidade de se 
