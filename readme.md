@@ -20,6 +20,12 @@ Primeiro passos com Django...
 Demais artigos
 ---
 
++ DB
+  - [Performing raw SQL queries](db/raw-query.md)
+  - [Connections and cursors](db/connections-and-cursors.md)
+  - [Connection PyMySQL](db/connection-pymysql.md)
+  - [Multiple databases](db/multiple-databases.md)
+
 - [foo](#)
 - [foo](#)
 - [foo](#)
@@ -31,7 +37,3 @@ Projetos de exemplo
 
 Aqui começam os exemplos de fato.
 
-- [Performing raw SQL queries](db/raw-query.md)
-- [Executing custom SQL directly](db/connection-cursor.md)
-- [Connection PyMySQL](db/connection-pymysql.md)
-- [Connections and cursors](db/connections-and-cursors.md)

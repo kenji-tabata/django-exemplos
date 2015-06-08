@@ -1,5 +1,10 @@
-Multi Database: Introdução
+Multiple databases
 ===
+
+
+https://docs.djangoproject.com/en/1.8/topics/db/multi-db/
+
+
 
 Neste exemplo é mostrado como funciona o sistema de Multi Database do Django, com ele é possível gerenciar e manipular 
 mais de um banco de dados no mesmo sistema. 

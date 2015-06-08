@@ -1,4 +1,4 @@
-Raw Query
+Performing raw SQL queries
 ===
 
 Neste exemplo é mostrado como utilizar os comando SQL puros para fazer consultas, filtrar registros, buscar registros e 
