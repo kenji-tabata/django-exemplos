@@ -5,7 +5,7 @@ Criamos o projeto, criamos e migramos os modelos, agora que tal experimentarmos 
 
 É o que vamos fazer, para abrirmos o terminal com o apoio das variáveis do projeto executamos...
 
-    $ python3 manage.py Shell
+    $ python3 manage.py shell
 
 
 Ou, se preferir, execute...
