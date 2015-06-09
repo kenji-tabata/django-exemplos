@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Models</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Instruções</h1>
+        <p>Para inserir mais registros no model abra o Shell do Django e digite os seguintes comandos.</p>
+        
+        <pre>
+            <code>
+# Importe o model do projeto
+>>> from models.models import Post
+
+# Importe o módulo de data e hora do Django
+from datetime import datetime
+
+# Para inserir um objeto Post (registro)
+Post.objects.create(titulo="Teste de notas", data=datetime.now(), conteudo="Bloco de texto")
+
+# Para visualizar no Shell todos os objetos cadastrados digite:
+>>> Post.objects.all()
+            </code>
+        </pre>
+        
+        <h1>Lista de Post</h1>
+        {% if listar_posts %}
+            {% for post in listar_posts %}
+                <b>Título: </b> {{ post.titulo }}<br>
+                <b>Data: </b> {{post.data}}<br>
+                <b>Anotação: </b>
+                <p>{{post.conteudo}}</p><br><br>
+            {% endfor %}
+        {% else %}
+            <p>Nenhum post foi encontrado</p>
+        {% endif %}
+    </body>
+</html>
