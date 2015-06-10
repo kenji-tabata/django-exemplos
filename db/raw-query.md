@@ -13,7 +13,7 @@ Considerando o seguinte modelo.
         last_name = models.CharField(...)
         birth_date = models.DateField(...)
 
-Podemos recuperar os reguistros da seguinte forma:
+Podemos recuperar os registros da seguinte forma:
 
     for p in Person.objects.raw('SELECT * FROM myapp_person'):
         print(p)
