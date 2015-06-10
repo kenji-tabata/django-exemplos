@@ -14,6 +14,9 @@ Ou, se preferir, execute...
     >>> import django
     >>> django.setup()
 
+Este passo é importanto pois, como dito, abre o terminal e disponibiliza as variáveis do projeto.
+
+
 
 ### Início
 
