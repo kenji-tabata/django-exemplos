@@ -7,8 +7,7 @@ Mas, independente desse entendimento, vamos colocar a mão na massa...
 
 Considerando os passos dos artigos anteriores, podemos criar uma app em seu projeto.
 
-Vá até o seu  projeto, ex: `cd /projetos/mysite` e crie um novo modelo chamado `polls` (veja o significado de 
-[poll](https://translate.google.com.br/?hl=pt-BR&authuser=0#en/pt/poll)).
+Vá até o seu  projeto, ex: `cd /projetos/mysite` e crie um novo modelo chamado `polls` (enquetes).
 
 O comando abaixo cria uma nova app em seu projeto.
 
