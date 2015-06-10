@@ -127,7 +127,7 @@ Se consultarmos um id que não existe...
     >>> Question.objects.get(pk=1)
     <Question: What's up?>
 
-... que é semelhanta a linha abaixo.
+... que é semelhante a linha abaixo.
 
     >>> Question.objects.get(id=1).
     <Question: What's up?>
