@@ -1,16 +1,19 @@
 Projects vs. apps
 ===
 
+Qual a diferença entre um projeto (projetct) e uma aplicação (app)?
 
-What’s the difference between a project and an app?
+- Uma __app__ é uma aplicação web que faz alguma coisa, por exemplo:
+  um sitema de weblog, um banco de dados de registros públicos (database of public records)
+  ou um simples aplicação de enquetes (simple poll app).
 
-- An __app__ is a Web application that does something – e.g.,
-  a Weblog system, a database of public records or a simple poll app.
+- Um __project__ é uma coleção de configuração e aplicativos (app) para um Web site em prticular.
+  
+Um projeto pode ter multiplas apps
 
-- A __project__ is a collection of configuration and apps for a particular Web site. 
-  A project can contain multiple apps.
-  An app can be in multiple projects.
+Um app pode estar em multiplo projetos
 
+Veja a documentação [1.8/intro/tutorial01/#creating-models](https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-models)
 
 Para criar um projeto executamos...
 
@@ -57,3 +60,8 @@ Os modelos são ativados alterando o arquivo `mysite/settings.py` conforme exemp
 
 
 Será um model equivalente a uma app ?
+
+Lembrando que um modelo (model) pode representar várias tabelas o bando de dados.
+
+E que também o modelo deve possuir os mesmos aspectos do design pattern Active Record de Martim Fowle'rs
+[1.8/misc/design-philosophies/#models](https://docs.djangoproject.com/en/1.8/misc/design-philosophies/#models)
