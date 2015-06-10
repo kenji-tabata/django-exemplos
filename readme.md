@@ -7,6 +7,7 @@ O uso deste repositório é indicado como uma fonte de consulta de como chegar a
 trabalhar com formulários, criar arquivos pdf, adicionar imagens, etc...
 
 
+
 Primeiro passos com Django...
 ---
 
@@ -15,6 +16,7 @@ Primeiro passos com Django...
 - [Criando seu primeiro projeto](criando-um-projeto.md)
 - [Criando Modelos (ou criando apps?)](criando-modelos.md)
 - [Experimentando a API (Playing with the API)](experimentando-api-terminal.md)
+
 
 
 Demais artigos
@@ -26,9 +28,6 @@ Demais artigos
   - [Connection PyMySQL](db/connection-pymysql.md)
   - [Multiple databases](db/multiple-databases.md)
 
-- [foo](#)
-- [foo](#)
-- [foo](#)
 
 
 
@@ -37,3 +36,6 @@ Projetos de exemplo
 
 Aqui começam os exemplos de fato.
 
+- [foo](#)
+- [foo](#)
+- [foo](#)
