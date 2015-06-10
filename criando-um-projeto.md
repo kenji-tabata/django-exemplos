@@ -1,6 +1,8 @@
 Criando seu primeiro projeto
 ===
 
+[https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-a-project](https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-a-project)
+
 Você deve ter o Pytohn e o Django devidamente instalados, mas ao invês de 
 utilizar sua máquina como ambiente, dê preferência para o 
 [virtualenv](http://www.devfuria.com.br/python/virtualenv/).
@@ -27,6 +29,8 @@ preciso configurar o banco de dados.
 
 Database setup
 ---
+
+[https://docs.djangoproject.com/en/1.8/intro/tutorial01/#database-setup](https://docs.djangoproject.com/en/1.8/intro/tutorial01/#database-setup)
 
 Se você analisar a seção `DATABASES` no arquivo `mysite/settings.py`, verá que a aplicação está apontando para um 
 arquivo em SQLite chamado `db.sqlite3`.

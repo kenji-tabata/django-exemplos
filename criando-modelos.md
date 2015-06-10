@@ -1,6 +1,8 @@
 Criando Modelos (ou criando apps?)
 ===
 
+
+
 Aqui ampliamos discussão ["Projects vs. apps"](projects-vs-apps.md) para "modelos ou apps ?".
 
 Mas, independente desse entendimento, vamos colocar a mão na massa...
@@ -36,6 +38,8 @@ E, portanto, nosso projeto ficará dessa forma....
 Definindo o modelo
 ---        
 
+[https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-models](https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-models)
+
 Vamos alterar o conteúdo do arquivo `/mysite/polls/models.py` conforme o exibido abaixo.
 
     from django.db import models
@@ -56,6 +60,8 @@ Leia a documentação para saber mais detalhes.
 
 Ativando o Modelo
 ---
+
+[https://docs.djangoproject.com/en/1.8/intro/tutorial01/#activating-models](https://docs.djangoproject.com/en/1.8/intro/tutorial01/#activating-models)
 
 Altere o arquivo `mysite/settings.py` para incluir sua app.
 

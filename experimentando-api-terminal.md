@@ -1,6 +1,8 @@
 Experimentando a API (Playing with the API)
 ===
 
+[https://docs.djangoproject.com/en/1.8/intro/tutorial01/#playing-with-the-api](https://docs.djangoproject.com/en/1.8/intro/tutorial01/#playing-with-the-api)
+
 Criamos o projeto, criamos e migramos os modelos, agora que tal experimentarmos isso no terminal?
 
 É o que vamos fazer, para abrirmos o terminal com o apoio das variáveis do projeto executamos...
