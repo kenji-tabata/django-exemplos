@@ -45,7 +45,8 @@ O que precisamos fazer é "migrar" as bases de dados da seção `INSTALLED_APPS`
 para o nosso bando de dados, fazemos isso
 com o seguinte comando....
 
-    $python3 manage.py migrate
+    $ cd mysite/
+    $ python3 manage.py migrate
 
 Sua tela deve ser semelhante ao exibido abaixo.
 
