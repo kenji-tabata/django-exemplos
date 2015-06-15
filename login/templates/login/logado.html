@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        {% if user.is_authenticated %}
+            <p>Bem vindo, {{ user.username }}  <a href="/logout">[logout]</a></p>
+            
+            <p>Área restrita...</p>
+        {% else %}
+            <p>Bem vindo, Visitante</p>
+            
+            {% if form.errors %}
+                <p>Your username and password didn't match. Please try again.</p>
+            {% endif %}
+            <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="login" />
+                <input type="hidden" name="next" value="/" />
+            </form>
+        {% endif %}
+    </body>
+</html>

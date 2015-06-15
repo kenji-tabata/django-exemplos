@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login com Session</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        {% if user.is_authenticated %}
+            <p>Bem vindo, {{ user.username }}  <a href="/logout">[logout]</a></p>
+            <p>Área protegida pelo sistema de login do Django.</p>
+
+            {% if frase %}
+                Session: {{frase}}
+            {% endif %}
+
+        {% else %}
+            <p>Bem vindo, Visitante <a href="/">[login]</a></p>
+        {% endif %}
+    </body>
+</html>
