@@ -16,7 +16,7 @@ def login_user(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             if user.is_active:
-                request.session['frase'] = "Frase secreta da Session..."
+                request.session['frase'] = "1234"
                 print("Definindo a frase da Session: "+request.session['frase'])
                 
                 login(request, user)
@@ -30,7 +30,7 @@ def login_user(request):
     return render(request, 'login_session/index.html', {'status': status, 'username': username})
 
 # Decorator que redireciona o usuário para a tela de login caso não esteja logado no sistema
-
+# fata aqui o decorator
 def logado(request):
     context = {}
     
@@ -39,7 +39,7 @@ def logado(request):
         
         if request.session.__contains__('frase'):
             context['frase'] = request.session['frase']
-            print("Carregando logado com a frase: %s" % (context['frase']))
+            print("Carregando a frase gravada na seção: %s" % (context['frase']))
         else:
             context['frase'] = ""
             

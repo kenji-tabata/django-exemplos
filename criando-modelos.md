@@ -1,7 +1,7 @@
 Criando Modelos (ou criando apps?)
 ===
 
-
+[https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-models](https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-models)
 
 Aqui ampliamos discussão ["Projects vs. apps"](projects-vs-apps.md) para "modelos ou apps ?".
 
@@ -33,12 +33,8 @@ E, portanto, nosso projeto ficará dessa forma....
         /polls/
 
 
-
-
 Definindo o modelo
 ---        
-
-[https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-models](https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-models)
 
 Vamos alterar o conteúdo do arquivo `/mysite/polls/models.py` conforme o exibido abaixo.
 

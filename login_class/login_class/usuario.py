@@ -5,6 +5,7 @@ class Usuario(object):
     def auth_user(self, request, username, password):    
 
         user = authenticate(username=username, password=password)
+        
         if user is not None:
             if user.is_active:
                 self.set_user_session(request, user)
@@ -12,9 +13,9 @@ class Usuario(object):
                 return True
             else:
                 status = "O usuário não está ativo."
-
         else:
             status = "O nome de usuário ou senha está incorreto."
+         
         return status
 
     def set_user_session(self, request, user_data):
