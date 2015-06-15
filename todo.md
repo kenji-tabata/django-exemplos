@@ -4,7 +4,7 @@ TODO
 
 ### Próximo (rápido)
 
-- [autenticação-de-usuario.md](autenticação-de-usuario.md) - continuar em [Group](https://docs.djangoproject.com/en/dev/topics/auth/default/#groups)
+- [autenticação-de-usuario.md](autenticacao-de-usuario.md) - continuar em [Group](https://docs.djangoproject.com/en/dev/topics/auth/default/#groups)
 - envio das variáveis de requisição (context)
 - print -> apache como para servidor embutido
 
