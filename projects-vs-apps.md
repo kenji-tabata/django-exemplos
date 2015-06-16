@@ -7,11 +7,11 @@ Qual a diferença entre um projeto (projetct) e uma aplicação (app)?
   um sitema de weblog, um banco de dados de registros públicos (database of public records)
   ou um simples aplicação de enquetes (simple poll app).
 
-- Um __project__ é uma coleção de configuração e aplicativos (app) para um Web site em prticular.
+- Um __project__ é uma coleção de configuração e aplicativos (app) para um Web site em particular.
   
-Um projeto pode ter multiplas apps
+Um projeto pode ter múltiplos apps
 
-Um app pode estar em multiplo projetos
+Um app pode estar em múltiplos projetos
 
 Veja a documentação [1.8/intro/tutorial01/#creating-models](https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-models)
 
@@ -30,6 +30,11 @@ Após a execução do comando teremos uma estrutura semelhante a exibida abaixo.
             settings.py
             urls.py
             wsgi.py
+
+Para incluirmos uma app no projeto executamos...
+
+    $ cd mysite
+    $ django-admin startapp app1
 
 Após incluirmos algumas apps, nossa estrutura será modificada como se segue.
 
