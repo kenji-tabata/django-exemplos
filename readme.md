@@ -16,6 +16,8 @@ Primeiro passos com Django...
 - [Criando seu primeiro projeto](criando-um-projeto.md)
 - [Criando Modelos (ou criando apps?)](criando-modelos.md)
 - [Experimentando a API (Playing with the API)](experimentando-api-terminal.md)
+- [Visualizar mensagens no log do servidor](visualizar-mensagens-no-log.md)
+- [Enviando o contexto para o Template](enviando-contexto.md)
 
 
 
@@ -28,7 +30,9 @@ Demais artigos
   - [Connection PyMySQL](db/connection-pymysql.md)
   - [Multiple databases](db/multiple-databases.md)
 
-
++ Login
+  - [Utilizando o sistema de Login padrão do Django](login-django.md)
+  - [Criando um sistema de Login básico no Django](login-custom.md)
 
 
 Projetos de exemplo
