@@ -45,7 +45,7 @@ Por padrão, a configuração requerida já vem incluída no arquivo `settings.p
     ...
 
 
-### User objects¶
+### Objetos User¶
 
 O objeto `User` é o *core* do sistema de autenticação.
 
@@ -134,9 +134,8 @@ Os objetos `User` podem ser acessado pelos objetos relacionados na mesma direç�
     myuser.user_permissions.clear()
 
 
-### Default permissions¶
+### Permissões Padrão
 
- – are created for each Django model defined in one of your installed applications.
 Quando a app `django.contrib.auth` é listada na seção INSTALLED_APPS isto garante que três permissões padrão são criadas
 para cada model (model) Django definido em cada uma de suas aplicações:
 
@@ -156,3 +155,124 @@ poderia fazer:
     change: user.has_perm('foo.change_bar')
     delete: user.has_perm('foo.delete_bar')
 
+
+### Grupos
+
+https://docs.djangoproject.com/en/dev/topics/auth/default/#groups
+
+
+O modelo `django.contrib.auth.models.Group` é um caminho genérico de categorização de usuários no qual você pode aplicar
+as permissões para aqueles usupários.
+
+A user can belong to any number of groups.
+
+
+
+### Criando permissões programaticamente
+
+Enquanto as permissões customizadas podem ser definidas em um "model's Meta class", você também podera criar permissões
+diretamente
+
+Por exemplo, vocẽ poderá criar a permissão `can_publish` para o modelo `BlogPost` na `myapp`:
+
+    from myapp.models import BlogPost
+    from django.contrib.auth.models import Permission
+    from django.contrib.contenttypes.models import ContentType
+
+    content_type = ContentType.objects.get_for_model(BlogPost)
+    permission = Permission.objects.create(codename='can_publish',
+                                           name='Can Publish Posts',
+                                           content_type=content_type)
+
+A permissão pode ser atribuida ao `User` através do atributo `user_permissions` ou ao `Group` através do atributo `permissions`.
+
+
+### Cache de permissão
+
+https://docs.djangoproject.com/en/dev/topics/auth/default/#permission-caching
+
+
+
+### Autenticação nas requisições web
+
+https://docs.djangoproject.com/en/dev/topics/auth/default/#authentication-in-web-requests
+
+
+### Como efetuar login
+
+https://docs.djangoproject.com/en/dev/topics/auth/default/#how-to-log-a-user-out
+
+```python
+from django.contrib.auth import authenticate, login
+
+def my_view(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            # Redirect to a success page.
+        else:
+            # Return a 'disabled account' error message
+            ...
+    else:
+        # Return an 'invalid login' error message.
+        ...
+```
+
+
+### Como efetuar logout
+
+https://docs.djangoproject.com/en/dev/topics/auth/default/#how-to-log-a-user-out
+
+
+### Limitando acesso a usuários registrados
+
+__The raw way:__¶
+
+O caminho mais simples para limitar acesso as páginas é checando `request.user.is_authenticated()` e redirecionando
+para a página de login:
+
+```python
+from django.conf import settings
+from django.shortcuts import redirect
+
+def my_view(request):
+    if not request.user.is_authenticated():
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+    # ...
+```
+...ou mostre uma mensagem de erro:
+
+```python
+from django.shortcuts import render
+
+def my_view(request):
+    if not request.user.is_authenticated():
+        return render(request, 'myapp/login_error.html')
+    # ...
+```
+
+Daqui até o próximo tema tem muito conteúdo sobre decoradores.
+
+
+
+### Authentication Views
+
+https://docs.djangoproject.com/en/dev/topics/auth/default/#module-django.contrib.auth.views
+
+
+### Helper functions
+
+https://docs.djangoproject.com/en/dev/topics/auth/default/#helper-functions
+
+
+### Built-in forms
+
+https://docs.djangoproject.com/en/dev/topics/auth/default/#module-django.contrib.auth.forms
+
+
+### Managing users in the admin
+
+https://docs.djangoproject.com/en/dev/topics/auth/default/#managing-users-in-the-admin
