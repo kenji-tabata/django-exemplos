@@ -2,7 +2,7 @@ Qual versão usar?
 ---
 
 Quando comecei a estudar o Django ele estava na versão 1.6, meus primeiros
-passos forma nessa versão.
+passos foram nessa versão.
 
 A versão 1.7 estava saindo do forno e resolvi utilizá-la no ambiente de produção.
 
