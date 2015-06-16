@@ -45,20 +45,20 @@ Sendo que o parâmetro da função `using()` é o nome (alias) da database defin
 
 2. Procure o seguinte trecho de código:
 
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
-    }
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'mydatabase',
+        }
 
 3. Substitua pelo código abaixo:
 
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'exemplos_dj',
-        'USER': 'root',
-        'PASSWORD': 'senha-do-root',
-        'HOST': '127.0.0.1',
-    }
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'exemplos_dj',
+            'USER': 'root',
+            'PASSWORD': 'senha-do-root',
+            'HOST': '127.0.0.1',
+        }
 
 4. Para adicionar as tabelas e criar o usuário admin do Django, digite o comando abaixo.
 
@@ -70,32 +70,32 @@ Sendo que o parâmetro da função `using()` é o nome (alias) da database defin
 
 1. Crie as novas tabelas que serão utilizadas pelo Django no MySQL
 
-    exemplos_dj
-    exemplos_dj_add
+        exemplos_dj
+        exemplos_dj_add
 
 2. Digite o comando abaixo para migrar no `exemplo_dj` do MySQL as tabelas do Django
 
-    python manage.py migrate
+        python manage.py migrate
 
 3. Adicione a configuração da database `exemplos_dj_add` no arquivo `settings.py`
 
-    'exemplos_dj_add': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'exemplos_dj_add',
-        'USER': 'root',
-        'PASSWORD': 'senha-do-root',
-        'HOST': '127.0.0.1',
-    }
+        'exemplos_dj_add': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'exemplos_dj_add',
+            'USER': 'root',
+            'PASSWORD': 'senha-do-root',
+            'HOST': '127.0.0.1',
+        }
 
 4. Adicione a tabela `multi_database_post` na database `exemplos_dj_add` do MySQL, para isso acesse a database 
 `exemplos_dj_add` e na aba SQL digite o código abaixo:
 
-    CREATE TABLE IF NOT EXISTS `multi_database_intro_post` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `titulo` varchar(200) NOT NULL,
-    `conteudo` longtext NOT NULL,
-    PRIMARY KEY (`id`)
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+        CREATE TABLE IF NOT EXISTS `multi_database_intro_post` (
+            `id` int(11) NOT NULL AUTO_INCREMENT,
+            `titulo` varchar(200) NOT NULL,
+            `conteudo` longtext NOT NULL,
+            PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 
 
@@ -103,15 +103,15 @@ Sendo que o parâmetro da função `using()` é o nome (alias) da database defin
 
 Para inserir os registro inicie o Shell do django
 
-# Importe o model do projeto 
+### Importe o model do projeto 
 
     >>> from multi_database_intro.models import Post
 
-# Insere um registro na database `default` digitando o comando abaixo:
+### Insere um registro na database `default` digitando o comando abaixo:
 
     >>> Post.objects.using('default').create(titulo="Testando 1", conteudo="Conteúdo de teste")
 
-# Para Inserir outro registro na database `exemplos_dj_add` digite a mesma linha acima alterando o parâmetro do `using` 
+### Para Inserir outro registro na database `exemplos_dj_add` digite a mesma linha acima alterando o parâmetro do `using` 
 para `exemplos_dj_add`, como no exemplo abaixo:
 
     >>> Post.objects.using('exemplos_dj_add').create(titulo="Testando 2", conteudo="Conteúdo de teste 2")
