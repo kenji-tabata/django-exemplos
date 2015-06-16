@@ -10,7 +10,7 @@ utilizar sua máquina como ambiente, dê preferência para o
 
 No terminal do Linux, digite...
 
-    django-admin startproject mysite
+    $ django-admin startproject mysite
 
 
 O comando acima criará a seguinte estrutura:
@@ -50,7 +50,7 @@ para o nosso bando de dados, fazemos isso
 com o seguinte comando....
 
     $ cd mysite/
-    $ python3 manage.py migrate
+    $ python manage.py migrate
 
 Sua tela deve ser semelhante ao exibido abaixo.
 
