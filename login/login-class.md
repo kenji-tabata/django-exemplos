@@ -1,4 +1,4 @@
-Criando uma classe auxiliar do login Django
+Criando um sistema de login com classe auxiliar no Django
 ===
 
 

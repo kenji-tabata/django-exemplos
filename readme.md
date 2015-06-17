@@ -31,8 +31,9 @@ Demais artigos
   - [Multiple databases](db/multiple-databases.md)
 
 + Login
-  - [Utilizando o sistema de Login padrão do Django](login-django.md)
-  - [Criando um sistema de Login básico no Django](login-custom.md)
+  - [Utilizando o sistema de login padrão do Django](login/login-padrao.md)
+  - [Criando um sistema de login customizado no Django](login/login-custom.md)
+  - [Criando um sistema de login com classe auxiliar no Django](login/login-class.md)
 
 
 Projetos de exemplo

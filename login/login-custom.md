@@ -1,4 +1,4 @@
-Criando um sistema de Login básico no Django
+Criando um sistema de login customizado no Django
 ===
 
 

@@ -1,4 +1,4 @@
-Utilizando o sistema de Login padrão do Django
+Utilizando o sistema de login padrão do Django
 ===
 
 
