@@ -4,10 +4,6 @@ Criando um sistema de login customizado no Django
 
 [https://docs.djangoproject.com/en/1.8/topics/auth/default/#how-to-log-a-user-in](https://docs.djangoproject.com/en/1.8/topics/auth/default/#how-to-log-a-user-in)
 
-
-Login
----
-
 Podemos criar uma função de login na `view.py` utilizando os recursos que o Django
 disponibiliza e adicionando outras funcionalidades tanto na view como no template.
 

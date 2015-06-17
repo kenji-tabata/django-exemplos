@@ -2,12 +2,7 @@ Criando um sistema de login com classe auxiliar no Django
 ===
 
 
-[https://docs.djangoproject.com/en/1.8/topics/auth/default/#how-to-log-a-user-in](https://docs.djangoproject.com/en/1.8/topics/auth/default/#how-to-log-a-user-in)
-
-Login
----
-
-Possui as mesmas funções do [Criando um sistema de Login básico no Django](login-custom.md) sendo 
+Possui as mesmas funções do [Criando um sistema de login customizado no Django](login-custom.md) sendo 
 a sua principal diferença está na criação de uma classe para separar da view as funções do login.
 
 
