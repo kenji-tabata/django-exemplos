@@ -40,7 +40,7 @@ def autenticar_usuario (self, request, usuario, senha):
         return False
 ```
 
-Para utilizar a SESSION criamos as funções get_session e set_session para salvar 
+Para utilizar a SESSION criamos as funções `get_session()` e `set_session`() para salvar 
 e recuperar o valor da sessão.
 
 ```python
