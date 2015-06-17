@@ -30,7 +30,9 @@ Demais artigos
   - [Connection PyMySQL](db/connection-pymysql.md)
   - [Multiple databases](db/multiple-databases.md)
 
-+ Login
++ Login e Autenticação de usuário
+
+  - [Autenticação de Usuário no Django](autenticacao-de-usuario.md)
   - [Utilizando o sistema de login padrão do Django](login/login-padrao.md)
   - [Criando um sistema de login customizado no Django](login/login-custom.md)
   - [Criando um sistema de login com classe auxiliar no Django](login/login-class.md)
