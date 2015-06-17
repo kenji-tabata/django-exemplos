@@ -64,9 +64,13 @@ O seu template que responde pela index (`mysite/polls/index.html`) deve ser como
 
 ```python
 {% if user.is_authenticated %}
-    <p>Bem vindo, {{ user.username }}  <a href="/logout">[logout]</a></p>
+    <p>Bem vindo, {{ user.username }}
 
     <p>Área restrita...</p>
+
+    {# Este é o link para logout #}
+    <a href="{% url 'logout' %}">Logout</a>
+
 {% endif %}
 ```
 
@@ -81,9 +85,6 @@ Agora devemos criar o template `mysite/polss/login.html` com o seguinte conteúd
 
     <input type="submit" value="login" />
 </form>
-
-{# Este é o link para logout #}
-<a href="{% url 'logout' %}">Logout</a>
 ```
 
 O [CSRF Token](https://docs.djangoproject.com/en/1.8/ref/csrf/) é obrigatório para o correto funcionamento da aplicação,
