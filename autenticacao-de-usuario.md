@@ -258,7 +258,7 @@ def my_view(request):
     # ...
 ```
 
-Daqui até o próximo tema tem muito conteúdo sobre decoradores.
+Daqui até o próximo subtítulo ficaram para trás muito conteúdo sobre decoradores.
 
 
 
