@@ -1,18 +1,78 @@
 Utilizando o sistema de login padrão do Django
 ===
 
-
 [https://docs.djangoproject.com/en/1.8/topics/auth/default/#using-the-django-authentication-system](https://docs.djangoproject.com/en/1.8/topics/auth/default/#using-the-django-authentication-system)
-
-Login
----
-
 
 A forma mais simples de se utilizar o login do Django é utilizando a classe 
 `django.contrib.auth.views.login` no template.
 
 
-Primeiro criamos o formulário de login no template...
+Iniciamos configurando o arquivo `settings.py` de forma que o Django saiba para qual página o usuário será redirecionado 
+após efetuar o login. No exemplo abaixo definimos o redirecionamento para o `index`.
+
+```python
+LOGIN_REDIRECT_URL = '/'
+```
+
+Em seguida, no arquivo `urls.py`, devemos definir:
+
+- a url no qual o usuário será redirecionado quando efetuar o login,
+- a url que irá renderizar o formulário de login e
+- a url para sair do sistema
+
+```python
+# mysite/polls/urls.py
+from django.conf.urls import url
+
+from . import views
+
+urlpatterns = [
+    
+    # Está é a index
+    url(r'^$', views.index, name='index'),
+    
+    # E este é o formulário de login
+    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login/login.html', 'redirect_field_name': ''}, name='login'),
+
+    #
+    # Para sair do sistema
+    #
+    url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/login'}),
+]
+```
+
+TODO: o que pé o campo `redirect_field_name`?
+
+
+Em sua view importe o decorator `login_required` e adicione as funções `index` e `login`.
+
+```python
+# mysite/polls/view.py
+from django.contrib.auth.decorators import login_required
+
+@login_required(login_url='/login')
+def index(request):
+    return render(request, 'login/index.html', {})
+
+def login(request):
+    return render(request, 'login/login.html', {})
+
+```
+
+Repare que ao adicionar o decorador `login_required` acima da função `index` ele bloqueia o acesso a página 
+`index.html` quando o usuário não estiver logado.
+
+O seu template que responde pela index (`mysite/polss/index.html`) deve ser como o demonstrado abaixo.
+
+```python
+{% if user.is_authenticated %}
+    <p>Bem vindo, {{ user.username }}  <a href="/logout">[logout]</a></p>
+
+    <p>Área restrita...</p>
+{% endif %}
+```
+
+Agora devemos criar o template `mysite/polss/login.html` com o seguinte conteúdo:
 
 ```python
 <form method="POST" action="{% url 'django.contrib.auth.views.login' %}">
@@ -24,101 +84,15 @@ Primeiro criamos o formulário de login no template...
 
     <input type="submit" value="login" />
 </form>
-```
 
-
-No `urls.py` definimos a url que irá renderizar o formulário de login...
-
-```python
-url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login/login.html','redirect_field_name': ''}, name='login'),
-```
-
-E a url que o usuário será redirecionado quando efetuar o login
-
-```python
-url(r'^$', views.index, name='index'),
-```
-
-
-Configure no `settings.py` a página que o usuário será redirecionado após efetuar o login. 
-No exemplo definimos o redirecionamento para o `index`.
-
-```python
-LOGIN_REDIRECT_URL = '/'
-```
-
-
-Na `view.py` importe o decorator `login_required` 
-
-```python
-from django.contrib.auth.decorators import login_required
-```
-
-
-Adicione as funções `index` e `login` 
-
-```python
-def index(request):
-    return render(request, 'login/index.html', {})
-
-def login(request):
-    return render(request, 'login/login.html', {})
-
-```
-
-E bloqueia o acesso a página `index.html` quando o usuário não estiver logado, 
-ao adicionar o decorator `login_required` acima da função `index`.
-
-```python
-@login_required(login_url='/login')
-def index(request):
-```
-
-
-No template adicione um bloco if que verifica se o usuário está logado 
-
-```python
-{% if user.is_authenticated %}
-    <p>Bem vindo, {{ user.username }}  <a href="/logout">[logout]</a></p>
-
-    <p>Área restrita...</p>
-{% endif %}
-```
-
-
-Para testar crie um usuário pelo terminal
-
-    python manage.py createsuperuser
-
-Veja mais como `criar um usuário` em [https://docs.djangoproject.com/en/1.8/topics/auth/default/#creating-users](https://docs.djangoproject.com/en/1.8/topics/auth/default/#creating-users)
-
-
-E acesse [http://127.0.0.1:8000](http://127.0.0.1:8000)
-
-
-
-Logout
----
-
-Adicione no `urls.py` a url para sair do sistema
-
-```python
-url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/login'}),
-```
-
-
-E no template adicione o link para sair
-
-```python
+{# Este é o link para logout #}
 <a href="{% url 'logout' %}">Logout</a>
 ```
 
+O [CSRF Token](https://docs.djangoproject.com/en/1.8/ref/csrf/) é obrigatório para o correto funcionamento da aplicação
 
+O [forms.as_p](https://docs.djangoproject.com/en/1.8/ref/forms/api/#outputting-forms-as-html) também é obrigatório
+para o correto funcionamento, pois de outra forma teríamos que saber qual o nome do campo que o Django está criando
+automaticamente e, por tanto, não faz sentido não usar o __forms.as_p__.
 
-
-
-
-Veja mais sobre o `CSRF Token` em [https://docs.djangoproject.com/en/1.8/ref/csrf/](https://docs.djangoproject.com/en/1.8/ref/csrf/).
-
-Veja mais sobre o `forms.as_p` em [https://docs.djangoproject.com/en/1.8/ref/forms/api/#outputting-forms-as-html](https://docs.djangoproject.com/en/1.8/ref/forms/api/#outputting-forms-as-html).
 
