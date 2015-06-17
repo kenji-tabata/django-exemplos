@@ -2,7 +2,7 @@ Criando um sistema de login com classe auxiliar no Django
 ===
 
 
-Possui as mesmas funções do [Criando um sistema de login customizado no Django](login-custom.md) sendo 
+Possui as mesmas funções do [Criando um sistema de login customizado no Django](login-custom.md) sendo
 a sua principal diferença está na criação de uma classe para separar da view as funções do login.
 
 
@@ -40,7 +40,7 @@ def autenticar_usuario (self, request, usuario, senha):
         return False
 ```
 
-Para utilizar a SESSION criamos as funções `get_session()` e `set_session`() para salvar 
+Para utilizar a SESSION criamos as funções `get_session()` e `set_session()` para salvar
 e recuperar o valor da sessão.
 
 ```python
@@ -107,7 +107,7 @@ if request.POST:
 return render(request, 'login_class/index.html', {'status': status, 'username': username})
 ```
 
-A função `usuario_logado` apenas recupera a informação que está armazenada na 
+A função `usuario_logado` apenas recupera a informação que está armazenada na
 SESSION e renderiza a página.
 
 ```python
