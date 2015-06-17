@@ -34,8 +34,8 @@ Demais artigos
 
   - [Autenticação de Usuário no Django](autenticacao-de-usuario.md)
   - [Utilizando o sistema de login padrão do Django](login/login-padrao.md)
-  - [Criando um sistema de login customizado no Django](login/login-custom.md)
-  - [Criando um sistema de login com classe auxiliar no Django](login/login-class.md)
+  - [Criando o seu próprio sistema de login](login/login-proprio.md)
+  - [Criando o seu próprio sistema de login auxiliado por classes](login/login-classes.md)
 
 
 Projetos de exemplo

@@ -73,7 +73,7 @@ execute o *migrate*).
 
 ### Alterando o password
 
-É possível alteara a senha pelo terminal... 
+É possível alterar a senha pelo terminal... 
 
     manage.py changepassword *username*
 
@@ -258,7 +258,7 @@ def my_view(request):
     # ...
 ```
 
-Daqui até o próximo tema tem muito conteúdo sobre decoradores.
+Daqui até o próximo subtítulo ficaram para trás muito conteúdo sobre decoradores.
 
 
 
