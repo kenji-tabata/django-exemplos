@@ -34,14 +34,12 @@ urlpatterns = [
     # E este é o formulário de login
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login/login.html', 'redirect_field_name': ''}, name='login'),
 
-    #
     # Para sair do sistema
-    #
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/login'}),
 ]
 ```
 
-TODO: o que pé o campo `redirect_field_name`?
+TODO: o que é o campo `redirect_field_name`?
 
 
 Em sua view importe o decorator `login_required` e adicione as funções `index` e `login`.
@@ -62,7 +60,7 @@ def login(request):
 Repare que ao adicionar o decorador `login_required` acima da função `index` ele bloqueia o acesso a página 
 `index.html` quando o usuário não estiver logado.
 
-O seu template que responde pela index (`mysite/polss/index.html`) deve ser como o demonstrado abaixo.
+O seu template que responde pela index (`mysite/polls/index.html`) deve ser como o demonstrado abaixo.
 
 ```python
 {% if user.is_authenticated %}
@@ -76,10 +74,9 @@ Agora devemos criar o template `mysite/polss/login.html` com o seguinte conteúd
 
 ```python
 <form method="POST" action="{% url 'django.contrib.auth.views.login' %}">
-    # Por ser um método POST é necessário colocar o `CSRF Token` no formulário...
     {% csrf_token %}
 
-    # Utilizamos o `form.as_p` para renderizar os inputs do formulário de login.
+    {# Utilizamos o `form.as_p` para renderizar os inputs do formulário de login. #}
     {{ form.as_p }}
 
     <input type="submit" value="login" />
@@ -89,7 +86,8 @@ Agora devemos criar o template `mysite/polss/login.html` com o seguinte conteúd
 <a href="{% url 'logout' %}">Logout</a>
 ```
 
-O [CSRF Token](https://docs.djangoproject.com/en/1.8/ref/csrf/) é obrigatório para o correto funcionamento da aplicação
+O [CSRF Token](https://docs.djangoproject.com/en/1.8/ref/csrf/) é obrigatório para o correto funcionamento da aplicação,
+por ser um método POST é necessário colocar o `CSRF Token` no formulário.
 
 O [forms.as_p](https://docs.djangoproject.com/en/1.8/ref/forms/api/#outputting-forms-as-html) também é obrigatório
 para o correto funcionamento, pois de outra forma teríamos que saber qual o nome do campo que o Django está criando
