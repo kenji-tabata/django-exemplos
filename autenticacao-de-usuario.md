@@ -124,14 +124,16 @@ de mesmo tipo.
 O objeto `User` possui dois campos de relacionamento muitos-para-muitos: `groups` e `user_permissions`
 Os objetos `User` podem ser acessado pelos objetos relacionados na mesma direção de qualquer outro modelo (model) Django:
 
-    myuser.groups = [group_list]
-    myuser.groups.add(group, group, ...)
-    myuser.groups.remove(group, group, ...)
-    myuser.groups.clear()
-    myuser.user_permissions = [permission_list]
-    myuser.user_permissions.add(permission, permission, ...)
-    myuser.user_permissions.remove(permission, permission, ...)
-    myuser.user_permissions.clear()
+```python
+myuser.groups = [group_list]
+myuser.groups.add(group, group, ...)
+myuser.groups.remove(group, group, ...)
+myuser.groups.clear()
+myuser.user_permissions = [permission_list]
+myuser.user_permissions.add(permission, permission, ...)
+myuser.user_permissions.remove(permission, permission, ...)
+myuser.user_permissions.clear()
+```
 
 
 ### Permissões Padrão
@@ -175,16 +177,18 @@ diretamente
 
 Por exemplo, vocẽ poderá criar a permissão `can_publish` para o modelo `BlogPost` na `myapp`:
 
-    from myapp.models import BlogPost
-    from django.contrib.auth.models import Permission
-    from django.contrib.contenttypes.models import ContentType
+```python
+from myapp.models import BlogPost
+from django.contrib.auth.models import Permission
+from django.contrib.contenttypes.models import ContentType
 
-    content_type = ContentType.objects.get_for_model(BlogPost)
-    permission = Permission.objects.create(codename='can_publish',
-                                           name='Can Publish Posts',
-                                           content_type=content_type)
+content_type = ContentType.objects.get_for_model(BlogPost)
+permission = Permission.objects.create(codename='can_publish',
+                                       name='Can Publish Posts',
+                                       content_type=content_type)
+```
 
-A permissão pode ser atribuida ao `User` através do atributo `user_permissions` ou ao `Group` através do atributo `permissions`.
+A permissão pode ser atribuída ao `User` através do atributo `user_permissions` ou ao `Group` através do atributo `permissions`.
 
 
 ### Cache de permissão
