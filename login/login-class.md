@@ -8,9 +8,11 @@ a sua principal diferença está na criação de uma classe para separar da view
 
 Crie uma classe `LoginUsuario` e importe os módulos necessários...
 
-    from django.contrib.auth import authenticate, login
+```python
+from django.contrib.auth import authenticate, login
 
-    class LoginUsuario(object):
+class LoginUsuario(object):
+```
 
 
 Adicione a função de autenticação do usuário...
