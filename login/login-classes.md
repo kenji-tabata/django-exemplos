@@ -1,126 +1,155 @@
-Criando um sistema de login com classe auxiliar no Django
+Criando o seu próprio sistema de login auxiliado por classes
 ===
 
+Para não misturar na view as requisições com o processo de login do Django, podemos separar essa 
+funcionalidade em uma classe separada e realizar os testes das funções de forma mais concreta.
 
-Possui as mesmas funções do [Criando um sistema de login customizado no Django](login-custom.md) sendo
-a sua principal diferença está na criação de uma classe para separar da view as funções do login.
 
-
-Crie uma classe `LoginUsuario` e importe os módulos necessários...
+Iniciamos criando a classe `LoginUsuario` que conterá a função para autenticar o usuário.
 
 ```python
+# mysite/polls/login_usuario.py
 from django.contrib.auth import authenticate, login
 
 class LoginUsuario(object):
-```
+    def autenticar_usuario (self, request, usuario, senha):
 
+        # Função do Django que autentica o usuário
+        user = authenticate(username=usuario, password=senha)
 
-Adicione a função de autenticação do usuário...
-
-```python
-def autenticar_usuario (self, request, usuario, senha):
-
-    # Função do Django que autentica o usuário
-    user = authenticate(username=usuario, password=senha)
-
-        # Verifica se o usuário existe no banco de dados
         if user is not None:
-
-            # Verifica se o status do usuário está ativado
             if user.is_active:
-
-            # Envia o objeto `user` para adicionar seus dados na sessão
-            self.set_session(request, user)
-
-            login(request, user)
-            return True
+                login(request, user)
+                return True
+            else:
+                return 'desativado'
         else:
-            return 'desativado'
-    else:
-        return False
+            return False
 ```
 
-Para utilizar a SESSION criamos as funções `get_session()` e `set_session()` para salvar
-e recuperar o valor da sessão.
+Adicione no arquivo `urls.py` as seguites urls abaixo:
+
+- a url no qual o usuário será redirecionado quando efetuar o login,
+- a url que irá renderizar o formulário de login,
+- a url que irá enviar o usuário e senha para efetuar o login e
+- a url para sair do sistema
+
 
 ```python
-def set_session(self, request, usuario):
-    # O argumento `usuario` é um objeto da classe `user` do Django
-    request.session['primeiro-nome'] = usuario.first_name
-    request.session['nome-usuario'] = usuario.username
+# mysite/polls/urls.py
+from django.conf.urls import url
 
+from polls import views
 
-def get_session(self, request, keys)
-    lista = {}
+urlpatterns = [
 
-    # O argumento `keys` recebe um array
-    for key in keys:
-        if key in request.session:
-            lista[key] = request.session[key]
+    # Index
+    url(r'^$', views.index, name='index'),
+    
+    # Formulário de login
+    url(r'^login/$', views.view_login, name='login'),
+    
+    # Envia o formulário de login
+    url(r'^acessar/$', views.acessar, name='acessar'),
 
-        else:
-            lista['primeiro-nome'] = ''
-
-    # Retorna uma lista na forma de dicionário
-    return lista
+    # Sai do sistema
+    url(r'^sair/$', views.sair, name='sair'),
+]
 ```
 
+Na view adicionamos apenas as funções para fazer requisições do template para o index, 
+login, acessar e sair. 
+
+Vale lembrar que é preciso importar a classe `LoginUsuario` para a função `autenticar_usuario` 
+funcionar.
+
+```python
+# mysite/polls/views.py
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+
+# Importando a classe login_usuario
+from polls.usuario import LoginUsuario
 
 
-View
----
+@login_required(login_url='/login')
+def index(request):
+    return render(request, 'polls/index.html', {})
 
-A função `acessar` da view fica encarregado apenas de fazer o redirecionamento.
+def view_login(request):
+    return render(request, 'polls/login.html', {})
 
-Para as funções do login funcionar é preciso importar a classe `LoginUsuario`...
+def acessar(request):
+    usuario = senha = ''
+    estado = "Digite seu Nome de usuário e senha."
 
-    # O `usuario` é o nome do arquivo (módulo)
-    from login.usuario import LoginUsuario
-
-
-Crie o objeto LoginUsuario para acessar suas funções
-
+    # Crie o objeto LoginUsuario para acessar suas funções
     login_usuario = LoginUsuario()
 
+    if request.POST:
+        usuario = request.POST.get('username')
+        senha = request.POST.get('password')
 
-E adicione as linhas abaixo
+        # O `autorizado` recebe o resultado da função do login
+        autorizado = login_usuario.autenticar_usuario(request, usuario, senha)
 
-```python
-if request.POST:
-    usuario = request.POST.get('username')
-    senha = request.POST.get('password')
+        if autorizado == True:
+            # Redireciona para a página de usuário logado
+            return redirect('polls.views.index')
 
-    # O `autorizacao` recebe o resultado da função do login
-    autorizado = login_usuario.autenticar_usuario(request, usuario, senha)
+        # Modifica o status pelas mensagens de erro.
+        elif (autorizado == 'desativado'):
+            status = 'O login deste usuário está desativado.'
+        else:
+            status = 'O usuário ou senha está incorreto.'
+   
+    return render(request, 'polls/login.html', {'status': status, 'username': usuario})
 
-
-    if autorizado == True:
-        # Redireciona para a página de usuário logado
-        return redirect('home')
-
-    # Modifica o status pelas mensagens de erro.
-    elif (autorizado == 'desativado'):
-        status = 'O usuário não está com o status ativado.'
-    else:
-        status = 'O usuário ou senha está incorreto.'
-
-return render(request, 'login_class/index.html', {'status': status, 'username': username})
+def sair(request):
+    logout(request)
+    return redirect('polls.views.view_login')
 ```
 
-A função `usuario_logado` apenas recupera a informação que está armazenada na
-SESSION e renderiza a página.
+Repare que ao adicionar o decorador `login_required` acima da função `index` ele bloqueia o acesso a página 
+`index.html` quando o usuário não estiver logado.
+
+Veja mais sobre o [`login_required`](https://docs.djangoproject.com/en/1.8/topics/auth/default/#the-login-required-decorator)
+
+No template que responde pelo login (`mysite/polls/login.html`) adicionamos o formulário de login. 
 
 ```python
-@login_required(login_url='/')
-def usuario_logado(request):
-    # Cria um array com os nomes das keys de cada parâmetro da sessão
-    keys = ['primeiro_nome', 'nome_usuario']
+{# Exibe as mensagens de erro do login #}
+{% if status %}
+    {{status}}
+{% endif %}
 
-    # Recupera da sessão o valor de cada chave do array `keys`
-    session_usuario = LoginUsuario().get_session(request, keys)
+<form method="POST" action="{% url 'acessar' %}">
+    {% csrf_token %}
 
-    return render(request, 'login/home.html', {'session_usuario': session_usuario})
+    {% if next %}
+        <input type="hidden" name="next" value="{{ next }}" />
+    {% endif %}
+
+    <label for='usuario'>Usuário: </label>
+    <input type="text" name="username" id="usuario" value="{{ username }}" /><br />
+    <label for="senha">Senha: </label>
+    <input type="password" name="password" id="senha" value="" /><br />
+
+    <input type="submit" value="Acessar" />
+</form>
 ```
+
+
+No template index (`mysite/polls/index.html`) adicione o conteúdo quando o usuário estiver logado.
+
+```python
+{% if user.is_authenticated %}
+    <p>Bem vindo, {{ user.username }}  <a href="{% url 'logout' %}">[logout]</a></p>
+    <p>Área protegida pelo sistema de login do Django.</p>
+
+{% endif %}
+```
+
 
 
 
