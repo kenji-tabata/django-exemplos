@@ -6,7 +6,7 @@ Repositório inicial do projeto https://code.google.com/p/pysimplesoap/
 
 A versão mais atual é a do github https://github.com/pysimplesoap/pysimplesoap
 
-A isntalação é simples:
+A instalação é simples:
 
     pip install pysimplesoap
 
