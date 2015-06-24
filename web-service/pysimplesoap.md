@@ -77,9 +77,7 @@ urlpatterns = [
 ## Testando (visualmente)
 
 Você executa o servidor embutido (`python manage.py runserver`) e cnfere o  resultado
-no seu navegador 
-
-http://localhost:8000/
+no seu navegador [http://localhost:8000/](http://localhost:8000/)
 
 Ou você poderá checar via terminal criando um cliente.
 
