@@ -1,4 +1,4 @@
-pysimplesoap
+pysimplesoap + Django
 ===
 
 
@@ -68,7 +68,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^$', 'soapservice.views.dispatcher_handler', name='home'),
+    url(r'^$', '[nome-do-seu-projeto].views.dispatcher_handler', name='home'),
 ]
 ```
 
@@ -110,6 +110,10 @@ print(int(result))
 
 
 ## Bug na biblioteca
+
+Quando acessamos o serviço via terminal obtemos o segunite erro
+
+    VersionMismatch.TypeError: can't use a string pattern on a bytes-like object
 
 Segundo a discução em https://code.google.com/p/pysimplesoap/issues/detail?id=142#c4
 a solução encontrada foi alterar __linha 163__ do arquivo 
