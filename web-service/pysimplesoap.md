@@ -6,17 +6,13 @@ Repositório inicial do projeto https://code.google.com/p/pysimplesoap/
 
 A versão mais atual é a do github https://github.com/pysimplesoap/pysimplesoap
 
-
-## Instalação
+A isntalação é simples:
 
     pip install pysimplesoap
 
 Obs: Eu utilizei Python 3.4. e Django 1.8
 
-
-### Arquivo views.py
-
-Ele será a nossa versão de servidor.
+Crie uma visão no Django, ela será a nossa versão de servidor.
 
 ```python
 """ views.py """
@@ -65,6 +61,18 @@ def dispatcher_handler(request):
     return response
     ```
 
+Não se esqueça do arquivo `urls.py`
+
+```python
+from django.conf.urls import include, url
+from django.contrib import admin
+
+urlpatterns = [
+    url(r'^$', 'soapservice.views.dispatcher_handler', name='home'),
+]
+```
+
+
 
 ## Testando (visualmente)
 
@@ -102,16 +110,6 @@ print(int(result))
 ```
 
 
-### Arquivo urls.py
-
-```python
-from django.conf.urls import include, url
-from django.contrib import admin
-
-urlpatterns = [
-    url(r'^$', 'soapservice.views.dispatcher_handler', name='home'),
-]
-```
 
 ## Bug na biblioteca
 
