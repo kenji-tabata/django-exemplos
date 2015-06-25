@@ -5,6 +5,15 @@ Criando Modelos (ou criando apps?)
 
 Aqui ampliamos discussão ["Projects vs. apps"](projects-vs-apps.md) para "modelos ou apps ?".
 
+Será um model equivalente a uma app ?
+
+Lembrando que um modelo (model) pode representar várias tabelas o bando de dados.
+
+E que uma app pode conter mais de um model.
+
+Além disso, o modelo deve possuir os mesmos aspectos do design pattern Active Record de Martim Fowle'rs
+[1.8/misc/design-philosophies/#models](https://docs.djangoproject.com/en/1.8/misc/design-philosophies/#models)
+
 Mas, independente desse entendimento, vamos colocar a mão na massa...
 
 Considerando os passos dos artigos anteriores, podemos criar uma app em seu projeto.
