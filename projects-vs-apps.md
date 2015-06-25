@@ -11,7 +11,7 @@ Qual a diferença entre um projeto (projetct) e uma aplicação (app)?
   
 Um projeto pode ter múltiplos apps
 
-Um app pode estar em múltiplos projetos
+Uma app pode estar em múltiplos projetos
 
 Veja a documentação [1.8/intro/tutorial01/#creating-models](https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-models)
 
@@ -49,7 +49,7 @@ Após incluirmos algumas apps, nossa estrutura será modificada como se segue.
         app2/
         app3/
 
-Os modelos são ativados alterando o arquivo `mysite/settings.py` conforme exemplo abaixo.
+As app's são ativados alterando o arquivo `mysite/settings.py` conforme exemplo abaixo.
 
     INSTALLED_APPS = (
         'django.contrib.admin',
@@ -62,11 +62,3 @@ Os modelos são ativados alterando o arquivo `mysite/settings.py` conforme exemp
         'app2',
         'app3',        
     )
-
-
-Será um model equivalente a uma app ?
-
-Lembrando que um modelo (model) pode representar várias tabelas o bando de dados.
-
-E que também o modelo deve possuir os mesmos aspectos do design pattern Active Record de Martim Fowle'rs
-[1.8/misc/design-philosophies/#models](https://docs.djangoproject.com/en/1.8/misc/design-philosophies/#models)
