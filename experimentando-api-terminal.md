@@ -9,14 +9,13 @@ Criamos o projeto, criamos e migramos os modelos, agora que tal experimentarmos 
 
     $ python3 manage.py shell
 
-
 Ou, se preferir, execute...
 
     $ python3
     >>> import django
     >>> django.setup()
 
-Este passo é importanto pois, como dito, abre o terminal e disponibiliza as variáveis do projeto.
+Este passo é importante pois, como dito, abre o terminal e disponibiliza as variáveis do projeto.
 
 
 
