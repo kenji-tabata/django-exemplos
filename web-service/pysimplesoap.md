@@ -1,6 +1,8 @@
 pysimplesoap + Django
 ===
 
+Se pretende criar um web service então terá que escolher uma biblio para fazer o meio de campo, neste exemplo estou
+utilizando a biblio __pysimplesoap__.
 
 Repositório inicial do projeto https://code.google.com/p/pysimplesoap/
 
