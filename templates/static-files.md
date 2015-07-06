@@ -1,18 +1,29 @@
 Arquivos Estáticos (CSS, JS, Imagens e etc)
 ===
 
-Neste exemplo é mostrado como configurar o acesso aos arquivos estáticos pelo projeto Django e pelo Apache. Primeiro 
-configure o Django para obter o acesso aos arquivos e depois configure o Apache para obter o acesso aos mesmos arquivos.
 
-Por questões de segurança é aconselhável definir a pasta static do Apache em um local diferente do projeto Django, mas é 
-possível definir a mesma pasta para os dois servidores.
-
-Quando colocar o site no servidor de produção envie somente a pasta static que foi configurada pelo Apache (aquele que 
-estará fora da pasta do projeto) evitando assim duplicar os arquivos no servidor. 
+[https://docs.djangoproject.com/en/dev/howto/static-files/](https://docs.djangoproject.com/en/dev/howto/static-files/)
 
 
-No Django:
----
+```html
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Static Files</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+        <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    </head>
+    <body>
+    </body>
+</html>
+```
+
+Comentar sobre a constante abaixo...(uma pasta para todas as apps)
+
+    STATIC_URL = '/static/'
 
 Crie uma pasta chamada `static` na pasta raiz do projeto:
 
@@ -24,6 +35,7 @@ No arquivo `settings.py` adicione as linhas abaixo para definir o PATH da pasta 
         os.path.join(BASE_DIR, "static"),
     )
 
+
 Para o template reconhecer a utilização dos arquivos estáticos, adicione na primeira linha do HTML a linha abaixo:
 
     {% load staticfiles %}
@@ -33,6 +45,12 @@ Assim quando for adicionar um arquivo estático no template, adicione no path do
     {% static 'nome-da-pasta/nome-do-arquivo.extensão' %}
 
     Ex.: <img src="{% static 'imagem/logo.png' %}" alt='logo' title='DOM'/>
+
+
+Por questões de segurança é aconselhável definir a pasta static do Apache em um local diferente do projeto Django, mas é 
+possível definir a mesma pasta para os dois servidores.
+
+
 
 
 No Apache
@@ -75,3 +93,6 @@ Reinicie o Apache
 Para copiar os arquivos estáticos do projeto para a pasta do Apache digite a linha abaixo
 
     python manage.py collectstatic
+
+Quando colocar o site no servidor de produção envie somente a pasta static que foi configurada pelo Apache (aquele que 
+estará fora da pasta do projeto) evitando assim duplicar os arquivos no servidor. 
