@@ -1,0 +1,38 @@
+Tratando erros (Try Except)
+===
+
+Como é o try execption????
+
+```python
+from django.shortcuts import render,redirect
+
+def index(request):
+    try:
+        1/0
+    
+    except KeyError as e:
+        print(e)
+```
+
+No exemplo abaixo é mostrado como utilizar o tratamento de erros ao utilizar uma SESSION. O erro ocorre quando o usuário 
+tenta recuperar a SESSION exemplo, mas não o encontra no sistema, causado o erro `KeyError`.
+
+```python
+from django.shortcuts import render,redirect
+
+def index(request):
+    try:
+        print(request.session['foo'])
+    
+    except KeyError as e:
+        print(e)
+```
+
+```python
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+```
