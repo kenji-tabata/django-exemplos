@@ -1,3 +1,46 @@
+Paginação do Django
+===
+
+Neste exemplo é mostrado como criar um sistema de paginação de maneira simples e funcional no Django.
+
+[Saiba mais](https://docs.djangoproject.com/en/1.8/topics/pagination/)
+
+
+```python
+from django.shortcuts import render_to_response
+from paginacao.models import Post
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+def index(request):
+
+    # Vamos retornar 500 posts, por exemplo.
+    post_list = Post.objects.order_by('id')
+    
+    # Vou paginar de 100 em 100
+    paginator = Paginator(post_list, 100)
+    
+    # Um número hipotético
+    page = 3
+    
+    try:
+        # Tenta retornar a página requisitada...
+        posts = paginator.page(page)
+
+    except PageNotAnInteger:
+        # ...se não a encontramos,
+        # abriremos a primeira página
+        posts = paginator.page(1)
+
+    except EmptyPage:
+        # Se não houver páginas...
+        posts = paginator.page(paginator.num_pages) # <--- TODO
+        
+    return render_to_response('paginacao/index.html', {'posts': posts})
+```
+
+Nosso template seria semelhante ao exibido abaixo...
+
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -51,3 +94,4 @@
         </div>
     </body>
 </html>
+```
