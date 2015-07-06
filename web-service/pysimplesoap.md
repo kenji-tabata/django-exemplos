@@ -78,7 +78,7 @@ urlpatterns = [
 
 ## Testando (visualmente)
 
-Você executa o servidor embutido (`python manage.py runserver`) e cnfere o  resultado
+Você executa o servidor embutido (`python manage.py runserver`) e confere o  resultado
 no seu navegador [http://localhost:8000/](http://localhost:8000/)
 
 Ou você poderá checar via terminal criando um cliente. Crie o arquivo abaixo dentro de sua pasta do projeto 
