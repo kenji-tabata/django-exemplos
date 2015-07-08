@@ -5,6 +5,10 @@ Timezone: Manipulação de data e hora
 [https://docs.python.org/3.4/library/datetime.html#module-datetime](https://docs.python.org/3.4/library/datetime.html#module-datetime)
 
 
+O `timezone` é um módulo do Django para manipular a data e hora e é considerado um atalho ou uma extensão do módulo 
+`datetime` do Python. Tanto que todas as classes e funções do módulo `datetime` funcionam no módulo `timezone`.
+
+
 ### Configurando o Django para o fuso horário brasileiro (ao exibir no template)
 
 Por padrão o Django trabalha somente com o fuso horário americano para a manipulação de datas(3 horas a mais com
