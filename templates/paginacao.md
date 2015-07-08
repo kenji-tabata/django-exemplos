@@ -19,21 +19,20 @@ def index(request):
     # Vou paginar de 100 em 100
     paginator = Paginator(post_list, 100)
     
-    # Um número hipotético
-    page = 3
+    # Recebe o número da página pelo link
+    page = request.GET.get('page')
     
     try:
-        # Tenta retornar a página requisitada...
+        # Retorna a paginação
         posts = paginator.page(page)
 
     except PageNotAnInteger:
-        # ...se não a encontramos,
-        # abriremos a primeira página
+        # Abriremos qual página
         posts = paginator.page(1)
 
     except EmptyPage:
-        # Se não houver páginas...
-        posts = paginator.page(paginator.num_pages) # <--- TODO
+        # Se a quantidade da itens por página for menor que o limite máximo de itens, retorna o número 1.
+        posts = paginator.page(paginator.num_pages)
         
     return render_to_response('paginacao/index.html', {'posts': posts})
 ```
