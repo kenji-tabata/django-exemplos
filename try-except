@@ -1,6 +1,9 @@
 Tratando erros (Try Except)
 ===
 
+[https://docs.djangoproject.com/en/1.8/ref/exceptions/](https://docs.djangoproject.com/en/1.8/ref/exceptions/)
+[https://docs.python.org/3/library/exceptions.html#built-in-exceptions](https://docs.python.org/3/library/exceptions.html#built-in-exceptions)
+
 Como é o try execption????
 
 ```python
@@ -10,7 +13,7 @@ def index(request):
     try:
         1/0
     
-    except KeyError as e:
+    except Exception as e:
         print(e)
 ```
 
@@ -28,11 +31,18 @@ def index(request):
         print(e)
 ```
 
+Abaixo um exemplo de como tratar o erro do Paginator do Django.
+
 ```python
-    try:
-        posts = paginator.page(page)
-    except PageNotAnInteger:
-        posts = paginator.page(1)
-    except EmptyPage:
-        posts = paginator.page(paginator.num_pages)
+try:
+    # Retorna a paginação
+    posts = paginator.page(page)
+
+except PageNotAnInteger:
+    # Abriremos qual página quando não encontrar um número inteiro
+    posts = paginator.page(1)
+
+except EmptyPage:
+    # Se a quantidade da itens por página for menor que o limite máximo de itens, retorna o número 1.
+    posts = paginator.page(paginator.num_pages)
 ```
