@@ -24,7 +24,7 @@ Em seguida, no arquivo `urls.py`, devemos definir:
 # mysite/polls/urls.py
 from django.conf.urls import url
 
-from . import views
+from polls import views
 
 urlpatterns = [
     
@@ -32,15 +32,12 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     
     # E este é o formulário de login
-    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login/login.html', 'redirect_field_name': ''}, name='login'),
+    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login/login.html'}, name='login'),
 
     # Para sair do sistema
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/login'}),
 ]
 ```
-
-TODO: o que é o campo `redirect_field_name`?
-
 
 Em sua view importe o decorator `login_required` e adicione as funções `index` e `login`.
 
@@ -50,15 +47,17 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='/login')
 def index(request):
-    return render(request, 'login/index.html', {})
+    return render(request, 'polls/index.html', {})
 
 def login(request):
-    return render(request, 'login/login.html', {})
+    return render(request, 'polls/login.html', {})
 
 ```
 
 Repare que ao adicionar o decorador `login_required` acima da função `index` ele bloqueia o acesso a página 
-`index.html` quando o usuário não estiver logado.
+`index.html` quando o usuário não estiver logado. 
+
+Veja mais sobre o [`login_required`](https://docs.djangoproject.com/en/1.8/topics/auth/default/#the-login-required-decorator)
 
 O seu template que responde pela index (`mysite/polls/index.html`) deve ser como o demonstrado abaixo.
 
