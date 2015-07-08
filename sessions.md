@@ -10,12 +10,20 @@ Criando...
 request.session['foo'] = "bar"
 ```
 
-Utilizando...
+Utilizando assim...
 
 ```python
 if request.session.__contains__('foo'):
     print(request.session['foo'])
 ```
+
+Ou assim...
+
+```python
+if 'foo' in request.session:
+    print(request.session['foo'])
+```
+
 
 Deletando...
 
