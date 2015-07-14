@@ -6,10 +6,6 @@ TODO
 
 Como fazer includes nos templates ? ([exemplo](https://github.com/devfuria/www.devfuria.com.br/blob/master/_layouts/base.html))
 
-### Sem pressa...
-
-- utilização de classe à parte (além do models)
-- CSRF - token
 
 
 
