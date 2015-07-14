@@ -45,7 +45,7 @@ Demais artigos
 + [Manipulação de arquivo](manipulando-arquivos.md)
 + [Tratando erros (Try Except)](try-except.md)
 + Configurações (settings.py)
-  - [Manipulação de data e hora](manipulando-datetime.md)
+  - [Manipulação de data e hora](manipulando-datatime.md)
   - [Paths](paths.md)
   - [Utilizando a constate nos arquivos Python](constantes.md)
 + Login e Autenticação de usuário
@@ -54,7 +54,7 @@ Demais artigos
   - [Criando o seu próprio sistema de login](login/login-proprio.md)
   - [Criando o seu próprio sistema de login auxiliado por classes](login/login-classes.md)
 + JavaScript
-  - [Requisição Ajax por método GET](javascript/requisicao-ajax-get.md)
-  - [Requisição Ajax por método POST](javascript/requisicao-ajax-post.md)
-  - [Exemplos práticos AJAX dos eventos Ajax com o Django](javascript/exemplos_ajax.md)
-+ [Webservices](webservices/pysimplesoap.md)
+  - [Requisição Ajax por método GET](java-script/requisicao-ajax-get.md)
+  - [Requisição Ajax por método POST](java-script/requisicao-ajax-post.md)
+  - [Exemplos práticos AJAX dos eventos Ajax com o Django](java-script/exemplos-ajax.md)
++ [Webservices](web-service/pysimplesoap.md)
