@@ -1,6 +1,7 @@
 Exemplo de dicionário + templates
 ===
 
+Definindo na `views.py`
 
 ```python
 from django.shortcuts import render
@@ -10,6 +11,8 @@ def index(request):
     
     return render(request, 'array_list/index.html', {'dados': dados})
 ```
+
+Renderizando no template HTML
 
 ```python
 {% for key, value in dados.items %}
