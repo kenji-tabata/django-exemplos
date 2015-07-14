@@ -1,6 +1,8 @@
 Local Flavor
 ===
 
+[https://docs.djangoproject.com/en/1.8/topics/localflavor/](https://docs.djangoproject.com/en/1.8/topics/localflavor/)
+
 Módulo do Django que contem componentes adicionais como combobox dos estados brasileiros e validações dos campos do 
 Django Forms de cada país.
 
