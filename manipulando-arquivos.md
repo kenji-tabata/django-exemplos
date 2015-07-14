@@ -27,6 +27,6 @@ arquivo_r = open("%s" % "foo.txt", "r")
 arquivo_w = open("%s" % "foo.txt", "w")
 arquivo_w.write(arquivo_r + "conteúdo adicional")
 
-Para remoer arquivo.
+Para remover arquivo.
 
 os.remove("%s" % "foo.txt")
