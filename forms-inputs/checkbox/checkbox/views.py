@@ -10,10 +10,9 @@ def enviar(request):
     
     if request.method == 'POST':
         checkbox = Assinatura.objects.create(
+            foo   = request.POST['foo'],
             email = request.POST['email'],
             assina = request.POST.get('assina', "Não desejo receber e-mail"),
         )
         return render(request, 'checkbox/index.html', {'checkbox': checkbox, 'listar_checkboxes':listar_checkboxes})
     
-    elif request.method == 'GET':
-        return render(request, 'checkbox/index.html', {'listar_checkboxes':listar_checkboxes})
