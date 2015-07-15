@@ -1,4 +1,4 @@
-Requisições: Métodos do GET e POST
+Requisições: Métodos do GET e POST 
 ===
 
 [https://docs.djangoproject.com/en/1.8/ref/request-response/#querydict-objects](https://docs.djangoproject.com/en/1.8/ref/request-response/#querydict-objects)
