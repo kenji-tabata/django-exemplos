@@ -46,7 +46,7 @@ Demais artigos
   - [Manipulação de data e hora](uteis/manipulando-datatime.md)
   - [Gerando número randomicos](uteis/numeros-randomicos.md)
   - [Paths](uteis/paths.md)
-  - [Sessions](uteis/Sessions.md)
+  - [Sessions](uteis/sessions.md)
   - [Tratando erros (Try Except)](uteis/try-except.md)
   - [Utilizando constantes nos arquivos Python](uteis/utilizando-constantes.md)
   - [Visualizar mensagens no log do servidor](uteis/visualizar-mensagens-no-log.md)
