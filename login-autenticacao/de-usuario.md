@@ -258,9 +258,6 @@ def my_view(request):
     # ...
 ```
 
-Daqui até o próximo subtítulo ficaram para trás muito conteúdo sobre decoradores.
-
-
 
 ### Authentication Views
 
