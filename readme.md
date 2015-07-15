@@ -31,8 +31,8 @@ Demais artigos
   - [Criando template de forma dinâmica](templates/dinamicos.md)
   - [Paginação do Django](templates/paginacao.md)
   - [Template Base](templates/base.md)
-  - [Arquivos Estáticos](templates/statics-files-.md)
-  - [Utilizando arquivos estáticos de outras aplicações](templates/static-files-de-varias-apps.md)
+  - [Arquivos Estáticos](templates/statics-files.md)
+  - [Utilizando arquivos estáticos de outras aplicações](templates/statics-files-de-varias-apps.md)
 + Formulários
   - [Sobre CSRF Token](formularios/csrf-token.md)
 + DB
