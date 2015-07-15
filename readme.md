@@ -51,8 +51,8 @@ Demais artigos
   - [Utilizando constantes nos arquivos Python](uteis/utilizando-constantes.md)
   - [Visualizar mensagens no log do servidor](uteis/visualizar-mensagens-no-log.md)
 + Login e Autenticação de usuário
-  - [Criando usuários](login-autenticacao/criando-usuarios.md.md)
-  - [Autenticação de Usuário no Django](login-autenticacao/autenticacao-de-usuario.md)
+  - [Criando usuários](login-autenticacao/criando-usuarios.md)
+  - [Autenticação de Usuário no Django](login-autenticacao/de-usuario.md)
   - [Utilizando o sistema de login padrão do Django](login-autenticacao/sistema-login-padrao.md)
   - [Criando o seu próprio sistema de login](login-autenticacao/sistema-de-login.md)
   - [Criando o seu próprio sistema de login auxiliado por classes](login-autenticacao/sistema-de-login-aux-por-classes.md)
