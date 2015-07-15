@@ -1,4 +1,4 @@
-pysimplesoap + Django
+pysimplesoap
 ===
 
 Se pretende criar um web service então terá que escolher uma biblio para fazer o meio de campo, neste exemplo estou
