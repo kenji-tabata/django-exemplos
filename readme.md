@@ -27,6 +27,7 @@ Demais artigos
   - [Namespaces](templates/namespaces.md)
   - [Enviando o contexto para o Template](templates/enviando-contexto.md)
   - [Requisições GET e POST](templates/requisicoes.md)
+  - [Métodos de requisição para GET e POST](templates/requisicoes-get-post-metodos.md)
   - [Percorrendo um dicionário](templates/percorrendo-um-dicionario.md)
   - [Criando template de forma dinâmica](templates/dinamicos.md)
   - [Paginação do Django](templates/paginacao.md)
