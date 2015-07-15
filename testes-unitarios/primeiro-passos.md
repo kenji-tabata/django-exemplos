@@ -1,10 +1,9 @@
-TestCase
+Primeiro passos com testes
 ===
 
-[https://docs.djangoproject.com/en/1.8/topics/testing/overview/#module-django.test](https://docs.djangoproject.com/en/1.8/topics/testing/overview/#module-django.test)
+Vamos realizar testes do `models.py` com o Django TestCase.
 
-Realizando testes do `models.py` com o Django TestCase.
----
+[https://docs.djangoproject.com/en/1.8/topics/testing/overview/#module-django.test](https://docs.djangoproject.com/en/1.8/topics/testing/overview/#module-django.test)
 
 Para realizar os testes do model utilizamos o arquivo `tests.py` da aplicação, assim o Django irá criar um banco de 
 dados temporário para realizar todos os testes. Todos os testes são executados apenas neste banco de dados temporário.
@@ -16,7 +15,7 @@ from django.test import TestCase
 from exemplo.models import Usuario
 
 class UsuarioTest(TestCase):
-
+    pass
 ```
 
 Dentro da classe definimos os parâmetros do objeto com o setUp...

@@ -1,4 +1,4 @@
-Utilizando a constate nos arquivos Python
+Utilizando constantes nos arquivos Python
 ===
 
 O arquivo `settings.py` permite definir constantes para utilização em qualquer arquivo Python do projeto. 

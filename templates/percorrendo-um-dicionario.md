@@ -1,4 +1,4 @@
-Exemplo de dicionário + templates
+Percorrendo um dicionário
 ===
 
 Definindo na `views.py`
