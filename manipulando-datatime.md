@@ -1,4 +1,4 @@
-Timezone: Manipulação de data e hora
+Manipulação de data e hora
 ===
 
 [https://docs.djangoproject.com/en/1.8/topics/i18n/timezones/](https://docs.djangoproject.com/en/1.8/topics/i18n/timezones/)

@@ -1,7 +1,7 @@
 Template Base
 ===
 
-Um exemplo de como utilizar o sistema de template.
+Um exemplo de como utilizar o sistema de template do Django.
 
 Considere a seguinte estrutura.
 

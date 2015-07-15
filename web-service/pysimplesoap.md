@@ -53,9 +53,9 @@ dispatcher.register_function('Adder', adder,
 @csrf_exempt
 def dispatcher_handler(request):
     if request.method == "POST":
-        response = HttpResponse(dispatcher.dispatch(request.body))
+        response = HttpResponse(dispatcher.dispatch(request.body), content_type="text/xml")
     else:
-        response = HttpResponse(dispatcher.wsdl(), content_type="application/xml")
+        response = HttpResponse(dispatcher.wsdl(), content_type="text/xml")
         # Obs: sem a definição do content-type o retorno será um HTML simples (text/plan)
         # aí já viu né? Vai dar pau!
 

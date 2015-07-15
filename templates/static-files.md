@@ -21,7 +21,7 @@ Arquivos Estáticos (CSS, JS, Imagens e etc)
 </html>
 ```
 
-Comentar sobre a constante abaixo...(uma pasta para todas as apps)
+Nome da pasta `static`
 
     STATIC_URL = '/static/'
 
@@ -53,17 +53,22 @@ possível definir a mesma pasta para os dois servidores.
 
 
 
-No Apache
+Deploy static files no Apache
 ---
+
+[https://docs.djangoproject.com/en/1.8/howto/static-files/deployment/](https://docs.djangoproject.com/en/1.8/howto/static-files/deployment/)
+
 
 Crie uma nova pasta fora do projeto Django para os arquivos estáticos do Apache
 
     mkdir static
 
+
 No arquivo `settings.py` adicione as linhas abaixo para definir o PATH da pasta static do Apache, no exemplo abaixo a 
 pasta static está fora da projeto django
 
     STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),'static/')
+
 
 Configure o Apache para ter permissão de acesso a pasta static:
 
@@ -85,10 +90,12 @@ No Debian adicione as linhas abaixo no arquivo de configuração do site, exempl
         Allow from all
     </Directory>
 
+
 Reinicie o Apache
 
     No CentOS: /etc/init.d/httpd restart
     No Debian: service apache2 restart
+
 
 Para copiar os arquivos estáticos do projeto para a pasta do Apache digite a linha abaixo
 
