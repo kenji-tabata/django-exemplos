@@ -1,4 +1,4 @@
-Paginação do Django
+Paginação
 ===
 
 Neste exemplo é mostrado como criar um sistema de paginação de maneira simples e funcional no Django.
