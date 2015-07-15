@@ -17,7 +17,7 @@ Primeiro passos com Django...
 - [Criando Modelos (ou criando apps?)](criando-modelos.md)
 - [Experimentando a API (Playing with the API)](experimentando-api-terminal.md)
 - [Hello World](hello-world.md)
-
+- [Hello World de uma única página](hello-world-one-page.md)
 
 Demais artigos
 ---
@@ -26,7 +26,8 @@ Demais artigos
   - [Exemplo de links](templates/exemplos-links.md)
   - [Namespaces](templates/namespaces.md)
   - [Enviando o contexto para o Template](templates/enviando-contexto.md)
-  - [Requisições GET e POST](templates/requisicoes.md)
+  - [Requisições GET e POST](templates/requisicoes-get-post.md)
+  - [Métodos de requisição para GET e POST](templates/requisicoes-get-post-metodos.md)
   - [Percorrendo um dicionário](templates/percorrendo-um-dicionario.md)
   - [Criando template de forma dinâmica](templates/dinamicos.md)
   - [Paginação do Django](templates/paginacao.md)
