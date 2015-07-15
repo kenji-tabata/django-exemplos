@@ -17,7 +17,7 @@ Primeiro passos com Django...
 - [Criando Modelos (ou criando apps?)](criando-modelos.md)
 - [Experimentando a API (Playing with the API)](experimentando-api-terminal.md)
 - [Hello World](hello-world.md)
-
+- [Hello World de uma única página](hello-world-one-page.md)
 
 Demais artigos
 ---
