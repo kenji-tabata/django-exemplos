@@ -176,7 +176,7 @@ E criamos o template para ver as informações.
         {% endif %}
     </body>
 </html>
-
+```
 
 
 Removendo item
