@@ -15,7 +15,7 @@ class Transportes(models.Model):
         return str(self.id)
 ```
 
-Inserindo item
+Inserindo um item
 ---
 
 No arquivo `views.py` adicionamos primeiro a função para enviar o formulário...
@@ -28,7 +28,7 @@ from checkbox.models import Transportes
 def enviar(request):
     if request.method == 'POST':
         
-        # A função `request.POST.get()` retorna o valor do checkbox, caso o checkbox não seja selecionado retorna o valor 'Não'
+        # A função `request.POST.get()` retorna o valor do checkbox, caso o contrário retorna o valor 'Não'
         p_carro = request.POST.get('carro','Não')
         p_moto = request.POST.get('moto','Não')
 
