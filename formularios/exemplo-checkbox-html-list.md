@@ -2,9 +2,9 @@ Exemplo de como criar vários checkbox e salvar como uma lista
 ===
 
 Ao invés de cada checkbox ter um atributo no model como no exemplo [anterior](exemplo-checkbox-html-crud.md), 
-podemos definir um único atributo no model para salvar todos os valores escolhidos dos checkboxes.
+podemos definir um único atributo do model para salvar todos os valores escolhidos dos checkboxes.
 
-Neste exemplo vamos utilizar o seguinte model:
+Seguindo o exemplo anterior, modifique o arquivo `models.py` conforme o exemplo abaixo:
 
 ```python
 # mysite/checkbox_multi/models.py
@@ -35,7 +35,7 @@ urlpatterns = patterns('',
 )
 ```
 
-Também não sofre alteração as funções index, listar, carregar e deletar do arquivo `views.py` do exemplo anterior.
+E as funções index, listar, carregar e deletar do arquivo `views.py` também não serão alteradas.
 
 
 Inserindo um item
@@ -98,16 +98,7 @@ o nome do transporte
 
 Atualizando um item
 ---
-
-A função `carregar` da `view.py` se mantém o mesmo como no exemplo anterior...
-
-
-def carregar(request, pk):
-    transporte = get_object_or_404(Transportes, pk=pk)
-    return render(request, 'checkbox_multi/ver-alternativas.html', {'transporte': transporte})
-
-
-E o atualizar recebe agora apenas uma váriavel do POST...
+Na função atualizar do arquivo `views.py` altere conforme as linhas abaixo
 
 def atualizar(request, pk):
     transporte = get_object_or_404(Transportes, pk=pk)
@@ -133,24 +124,4 @@ No template html somente o if que é alterado conforme o exemplo abaixo
     <label for='moto'>Moto</label><br/>
     <input type="submit" id='enviar' value='Enviar'/><br/>
 </form>
-```
-
-Removendo um item
----
-
-Se mantém o mesmo do exemplo anterior na `views.py` e no template html.
-
-```html
-<p><strong>ID: </strong>{{transporte.id}}
-    ...
-    <a href="{% url 'deletar' transporte.id %}"> Remover</a>
-</p>
-
-```python
-def deletar(request, pk):
-    transporte = get_object_or_404(Transportes, pk=pk)
-    
-    transporte.delete()
-    
-    return redirect('checkbox.views.listar')
 ```
