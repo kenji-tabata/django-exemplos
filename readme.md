@@ -36,6 +36,11 @@ Demais artigos
   - [Utilizando arquivos estáticos de outras aplicações](templates/statics-files-de-varias-apps.md)
 + Formulários
   - [Sobre CSRF Token](formularios/csrf-token.md)
+  - [Criando um formulário simples](formularios/criando-um-formulario-simples.md)
+  - [Criando um formulário com o auxilio do forms](formularios/criando-um-formulario-forms.md)
+  - [Métodos para salvar um registro do formulário](metodos-para-salvar-registro.md)
+  - [Exemplo de como criar um checkbox com CRUD em HTML](formularios/exemplo-checkbox-html-crud.md)
+  - [Exemplo de como criar vários checkbox e salvar como uma lista](formularios/exemplo-checkbox-html-list.md)
 + DB
   - [Performing raw SQL queries](db/raw-query.md)
   - [Connections and cursors](db/connections-and-cursors.md)

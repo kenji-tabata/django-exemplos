@@ -19,3 +19,22 @@ Renderizando no template HTML
     <p>Key: {{ key }}, Valor: {{ value }}<p>
 {% endfor %}
 ```
+
+Utilizando a função forloop() para enumerar cada item
+
+```python
+{% for key, value in checkboxes.items %}
+    <input type="checkbox" id='check{{forloop.counter}}' name="check" value='{{forloop.counter}}'>
+    <label for="check{{forloop.counter}}">{{ value }}</label><br>
+{% endfor %}
+```
+
+O resultado do código html ficaria assim...
+
+```html
+<input id="check1" name="check" value="1" type="checkbox">
+<label for="check1">primeira frase</label><br/>
+<input id="check2" name="check" value="2" type="checkbox">
+<label for="check2">segunda frase</label><br/>
+...
+```

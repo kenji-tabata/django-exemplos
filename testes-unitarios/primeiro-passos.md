@@ -23,9 +23,9 @@ Dentro da classe definimos os parâmetros do objeto com o setUp...
 ```python
 def setUp(self):
     self.usuario = {
-        'id': 1
-        'nome': 'Marcos'
-        'email': 'marcos@emailcom.br'
+        'id': 1,
+        'nome': 'Marcos',
+        'email': 'marcos@emailcom.br',
     }
 ```
 
@@ -34,14 +34,14 @@ Podemos definir também vários objetos diferentes do mesmo model...
 ```python
 def setUp(self):
     self.usuario1 = {
-        'id': 1
-        'nome': 'Marcos'
-        'email': 'marcos@email.com.br'
+        'id': 1,
+        'nome': 'Marcos',
+        'email': 'marcos@email.com.br',
     }
     self.usuario2 = {
-        'id': 2
-        'nome': 'Vanessa'
-        'email': 'vanessa@email.com.br'
+        'id': 2,
+        'nome': 'Vanessa',
+        'email': 'vanessa@email.com.br',
     }
 ```
 
