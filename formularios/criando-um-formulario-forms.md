@@ -89,6 +89,7 @@ E por último criamos os templates das páginas `index` para exibir o formulári
 <form action="{% url 'enviar' %}" method="POST">
     {% csrf_token %}
     <label for='titulo'>Título: </label><br>
+    <!-- O atributo 'name' de todos os inputs devem ser os mesmos nomes que estão definidos no 'model.py' -->
     <input type='text' id='titulo' name='titulo' placeholder="Titulo"/><br>
     <label for='email'>E-mail: </label><br>
     <input type='email' id='email' name='email' placeholder="E-mail"/><br>
