@@ -57,24 +57,15 @@ Por fim crie o template `index.html` com o formulário para enviar as respostas.
 
 ```python
 <!-- mysite/checkbox/templates/checkbox/index.html-->
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Checkbox</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>        
-        <h1>Inserir item</h1>
-        <form action="{% url 'enviar' %}" method="POST">
-            {% csrf_token %}
-            <input type='checkbox' name='carro' id='carro' value='Sim'/>
-            <label for='carro'>Carro</label><br/>
-            <input type='checkbox' name='moto' id='moto' value='Sim'/>
-            <label for='moto'>Moto</label><br/>
-            <input type="submit" id='enviar' value='Enviar'/><br/>
-        </form>
-    </body>
-</html>
+<h1>Inserir item</h1>
+<form action="{% url 'enviar' %}" method="POST">
+    {% csrf_token %}
+    <input type='checkbox' name='carro' id='carro' value='Sim'/>
+    <label for='carro'>Carro</label><br/>
+    <input type='checkbox' name='moto' id='moto' value='Sim'/>
+    <label for='moto'>Moto</label><br/>
+    <input type="submit" id='enviar' value='Enviar'/><br/>
+</form>
 ```
 
 
@@ -99,24 +90,15 @@ E crie o template para o listar
 
 ```html
 <!-- mysite/checkbox/templates/checkbox/listar.html-->
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Checkbox</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <h1>Listando as alternativas</h1>
-        {% for transporte in transportes %}
-            <p><strong>ID: </strong>{{transporte.id}} / 
-                <strong>Carro: </strong>{{transporte.carro}} / 
-                <strong>Moto: </strong>{{transporte.moto}}
-            </p>
-        {% empty %}
-            <p>Nenhuma resposta foi encontrada</p>
-        {% endfor %}
-    </body>
-</html>
+<h1>Listando as alternativas</h1>
+{% for transporte in transportes %}
+    <p><strong>ID: </strong>{{transporte.id}} / 
+        <strong>Carro: </strong>{{transporte.carro}} / 
+        <strong>Moto: </strong>{{transporte.moto}}
+    </p>
+{% empty %}
+    <p>Nenhuma resposta foi encontrada</p>
+{% endfor %}
 ```
 
 
@@ -155,27 +137,18 @@ E criamos o template para ver as informações.
 
 ```html
 <!-- mysite/checkbox/templates/checkbox/ver-alternativas.html -->
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Checkbox</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <p><a href="{% url 'index' %}">Adicionar</a> | <a href="{% url 'listar' %}">Listar</a> | </p>
-        {% if transporte %}
-            <form action="{% url 'atualizar' transporte.id %}" method="POST">
-                {% csrf_token %}
-                <input type='hidden' name='id' id='{{transporte.id}}' value='{{ transporte.id }}'/>
-                <input type='checkbox' name='carro' id='carro' value='Sim' {% if transporte.carro == "Sim" %} checked {% endif %}/>
-                <label for='carro'>Carro</label><br/>
-                <input type='checkbox' name='moto' id='moto' value='Sim' {% if transporte.moto == "Sim" %} checked {% endif %}/>
-                <label for='moto'>Moto</label><br/>
-                <input type="submit" id='enviar' value='Enviar'/><br/>
-            </form>
-        {% endif %}
-    </body>
-</html>
+<p><a href="{% url 'index' %}">Adicionar</a> | <a href="{% url 'listar' %}">Listar</a> | </p>
+{% if transporte %}
+    <form action="{% url 'atualizar' transporte.id %}" method="POST">
+        {% csrf_token %}
+        <input type='hidden' name='id' id='{{transporte.id}}' value='{{ transporte.id }}'/>
+        <input type='checkbox' name='carro' id='carro' value='Sim' {% if transporte.carro == "Sim" %} checked {% endif %}/>
+        <label for='carro'>Carro</label><br/>
+        <input type='checkbox' name='moto' id='moto' value='Sim' {% if transporte.moto == "Sim" %} checked {% endif %}/>
+        <label for='moto'>Moto</label><br/>
+        <input type="submit" id='enviar' value='Enviar'/><br/>
+    </form>
+{% endif %}
 ```
 
 
