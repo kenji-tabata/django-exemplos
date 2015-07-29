@@ -29,7 +29,7 @@ Vamos ver se está funcionando executando os testes no terminal, repare que não
 faremos isso em seguida.
 
     cd mysite/polls/
-    python manage.py test polls --testrunner=mysite.settgins_noDB.TestRunnerWithoutDB
+    python manage.py test polls --testrunner=mysite.settings_noDB.TestRunnerWithoutDB
 
 E o resultado é...
 
