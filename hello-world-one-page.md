@@ -3,7 +3,7 @@ Hello World de uma única página
 
 Exemplo estraído do livro Django Essencial de Julia Elman e Mark Lavin.
 
-Trata-se de um "Hello World" de uma única página.
+Trata-se de um "Hello World" de um único script.
 
     cd project_name
     python project_name.py runserver
