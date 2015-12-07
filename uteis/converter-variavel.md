@@ -62,6 +62,44 @@ def converter_string_dict(str_value):
     return array
 ```
 
+### Exemplo 3:
+
+Entrada: "nome:Lucas Araujo;alternativas:1,2,3,4,5,6,7,8,9,10,11;cpf:111.222.444-22;sexo:M;"
+Saída:   {'nome': 'Lucas', 'alternativas': '1,2,3,4,5,6,7,8,9,10,11', 'cpf': '111.555.888-22', ' sexo': 'M'}
+
+```python
+def converter_string_dict(string):
+    keys = []
+    values = []
+    separar_dados = string.split(';')
+        
+    for dados in separar_dados:
+        dado=dados.split(':')
+        keys.append(dado[0])
+        values.append(dado[1])
+        
+        dic = dict(zip(keys,values))
+        
+    return dic
+```
+
+### Exemplo 4: (Por variáveis)
+
+Entrada: nome="Lucas Araujo" cpf='111.555.888-22' alternativas="1,2,3,4,5,6,7,8,9,10,11" sexo="M"
+Saída:   {'nome': 'Lucas', 'cpf': '111.555.888-22', 'alternativas': '1,2,3,4,5,6,7,8,9,10,11', ' sexo': 'M'}
+
+def converter_dict_main(self, nome, cpf, sexo):
+        n_info = "Não infomado"
+        
+        dic = {
+            'nome': nome,
+            'cpf': cpf,
+            'alternativas': alt,
+            'sexo': sexo,
+        }
+        
+        return dic
+
 String para array com dicionário, separado por vírgula
 ---
 
