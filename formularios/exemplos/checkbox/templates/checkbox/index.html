@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>checkbox</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Inserir item</h1>
+        <p><a href="{% url 'checkbox:index' %}">Adicionar</a> | <a href="{% url 'checkbox:listar' %}">Listar</a> | </p>
+        
+        <form action="{% url 'checkbox:enviar' %}" method="POST">
+            {% csrf_token %}
+            <input type='checkbox' name='carro' id='carro' value='Sim'/>
+            <label for='carro'>Carro</label><br/>
+            <input type='checkbox' name='moto' id='moto' value='Sim'/>
+            <label for='moto'>Moto</label><br/>
+            <input type='checkbox' name='onibus' id='onibus' value='Sim'/>
+            <label for='onibus'>Ônibus</label><br/>
+            <input type='checkbox' name='bicicleta' id='bicicleta' value='Sim'/>
+            <label for='bicicleta'>Bicicleta</label><br/>
+            <input type="submit" id='enviar' value='Enviar'/><br/>
+        </form>
+    </body>
+</html>

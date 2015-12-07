@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>checkbox_multi</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Inserir item</h1>
+        <p><a href="{% url 'checkbox_multi:index' %}">Adicionar</a> | <a href="{% url 'checkbox_multi:listar' %}">Listar</a> | </p>
+        
+        <form action="{% url 'checkbox_multi:enviar' %}" method="POST">
+            {% csrf_token %}
+            <input type='checkbox' name='opcoes_transp' id='carro' value='Carro'/>
+            <label for='carro'>Carro</label><br/>
+            <input type='checkbox' name='opcoes_transp' id='moto' value='Moto'/>
+            <label for='moto'>Moto</label><br/>
+            <input type='checkbox' name='opcoes_transp' id='onibus' value='Ônibus'/>
+            <label for='onibus'>Ônibus</label><br/>
+            <input type='checkbox' name='opcoes_transp' id='bicicleta' value='Bicicleta'/>
+            <label for='bicicleta'>Bicicleta</label><br/>
+            <input type="submit" id='enviar' value='Enviar'/><br/>
+        </form>
+    </body>
+</html>

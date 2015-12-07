@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        {% if listar_posts %}
+            {% for post in listar_posts %}
+                <b>Título: </b> {{ post.titulo }}<br>
+                <b>Data: </b> {{post.data}}<br>
+                <b>E-mail </b> {{ post.email }}<br>
+                <b>Site: </b> {{post.url}}<br>
+                <b>Pontuação: </b> {{ post.rating }}<br>
+                <b>Like: </b> {{post.like}}<br>
+                <b>Conteúdo: </b> {{post.conteudo}}<br><br>
+            {% empty %}
+                <p>Nenhum post foi encontrado</p>
+            {% endfor %}
+        {% endif %}
+
+        <a href="{% url 'textbox_forms:index' %}">Voltar</a>
+    </body>
+</html>

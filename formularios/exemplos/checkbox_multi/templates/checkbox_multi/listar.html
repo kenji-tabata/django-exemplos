@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>checkbox_multi</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p><a href="{% url 'checkbox_multi:index' %}">Adicionar</a> | <a href="{% url 'checkbox_multi:listar' %}">Listar</a> | </p>
+        <h1>Listando as alternativas</h1>
+        {% for transporte in transportes %}
+            <p><strong><a href="{% url 'checkbox_multi:ver-alternativas' transporte.id %}">ID</a>: </strong>{{transporte.id}} / 
+                <strong>Carro: </strong>{% if 'Carro' in transporte.opcoes_transp %}Sim {% else %}Não {% endif %} / 
+                <strong>Moto: </strong>{% if 'Moto' in transporte.opcoes_transp %}Sim {% else %}Não {% endif %} /
+                <strong>Ônibus: </strong>{% if 'Ônibus' in transporte.opcoes_transp %}Sim {% else %}Não {% endif %}/
+                <strong>Bicicleta: </strong>{% if 'Bicicleta' in transporte.opcoes_transp %}Sim {% else %}Não {% endif %}| 
+                <a href="{% url 'checkbox:deletar' transporte.id %}">Remover</a>
+            </p>
+        {% empty %}
+            <p>Nenhuma resposta foi encontrada</p>
+        {% endfor %}
+    </body>
+</html>

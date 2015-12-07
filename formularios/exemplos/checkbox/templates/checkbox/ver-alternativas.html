@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p><a href="{% url 'checkbox:index' %}">Adicionar</a> | <a href="{% url 'checkbox:listar' %}">Listar</a> | </p>
+        {% if transporte %}
+            <form action="{% url 'checkbox:atualizar' transporte.id %}" method="POST">
+                {% csrf_token %}
+                <input type='hidden' name='id' id='{{transporte.id}}' value='{{ transporte.id }}'/>
+                <input type='checkbox' name='carro' id='carro' value='Sim' {% if transporte.carro == "Sim" %} checked {% endif %}/>
+                <label for='carro'>Carro</label><br/>
+                <input type='checkbox' name='moto' id='moto' value='Sim' {% if transporte.moto == "Sim" %} checked {% endif %}/>
+                <label for='moto'>Moto</label><br/>
+                <input type='checkbox' name='onibus' id='onibus' value='Sim' {% if transporte.onibus == "Sim" %} checked {% endif %}/>
+                <label for='onibus'>Ônibus</label><br/>
+                <input type='checkbox' name='bicicleta' id='bicicleta' value='Sim' {% if transporte.bicicleta == "Sim" %} checked {% endif %}/>
+                <label for='bicicleta'>Bicicleta</label><br/>
+                <input type="submit" id='enviar' value='Enviar'/><br/>
+            </form>
+
+            <p><strong>ID: </strong>{{transporte.id}} / 
+                   <strong>Carro: </strong>{{transporte.carro}} / 
+                   <strong>Moto: </strong>{{transporte.moto}} /
+                   <strong>Ônibus: </strong>{{transporte.onibus}} /
+                   <strong>Bicicleta: </strong>{{transporte.bicicleta}}</p>
+        {% endif %}
+    </body>
+</html>
