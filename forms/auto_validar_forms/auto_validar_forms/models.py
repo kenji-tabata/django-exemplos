@@ -16,3 +16,13 @@ class Formulario(models.Model):
     estado = models.CharField(max_length=2)
     cep = models.CharField('CEP', max_length=9)
     resp = models.CharField('Resposta', max_length=100)
+#    formularios = models.ManyToManyField(Pessoa, through="Grupo", through_fields=('formulario','pessoa'))
+    
+class Pessoa(models.Model):
+    dado = models.CharField(max_length=200)
+    grupos = models.ManyToManyField(Formulario, through="Grupo", through_fields=('pessoa', 'formulario'))
+    
+class Grupo(models.Model):
+    formulario = models.ForeignKey(Formulario)
+    pessoa = models.ForeignKey(Pessoa)
+    
