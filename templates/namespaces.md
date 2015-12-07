@@ -34,3 +34,9 @@ ao chamar a view diretamente, como no exemplo abaixo:
 Porém, ele funcionaria na forma básica (sem utilização de namespaces):
 
     <a href="{% url 'app1.views.index' %}">App 1</a><br/>
+
+Obs.:
+
+Ao utilizar o redirect é necessário também colocar o seu namespace ao requisitar a view.
+
+    redirect('app1:views.index')
